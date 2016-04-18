@@ -13,7 +13,7 @@
 
 ; list all the packages
 (setq package-list
-  '(ibuffer magit operate-on-number grunt helm))
+  '(use-package ibuffer magit operate-on-number grunt helm rainbow-delimiters))
 
 ; activate all the packages
 (package-initialize)
