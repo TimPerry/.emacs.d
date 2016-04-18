@@ -24,4 +24,6 @@
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'base16-3024-dark t)
 
+; reset
 (setq inhibit-startup-message t)
+(tool-bar-mode -1)
