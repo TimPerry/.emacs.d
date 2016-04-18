@@ -21,8 +21,15 @@
       helm-recentf-fuzzy-match t
       helm-semantic-fuzzy-match t))
 
+; theme
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'base16-3024-dark t)
+
+(use-package powerline
+  :if window-system
+  :load-path "elisp"
+  :config
+  (advice-add 'load-theme :after 'update-powerline))
 
 ; reset
 (setq inhibit-startup-message t)
