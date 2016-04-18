@@ -25,11 +25,15 @@
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'base16-3024-dark t)
 
+(use-package smex
+  :config (smex-initialize)
+  :bind ("M-x" . smex)
+        ("M-X" . smex-major-mode-commands)
+        ("C-c M-x" . execute-extended-command))
+
 (use-package powerline
-  :if window-system
-  :load-path "elisp"
-  :config
-  (advice-add 'load-theme :after 'update-powerline))
+  :init
+  (powerline-default-theme))
 
 ; reset
 (setq inhibit-startup-message t)
