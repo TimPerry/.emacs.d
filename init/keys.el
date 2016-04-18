@@ -15,5 +15,10 @@
 (global-set-key (kbd "A-<left>") 'left-word)
 (global-set-key (kbd "A-<right>") 'right-word)
 
+(global-set-key (kbd "M-l") 'goto-line)
+
+(global-set-key (kbd "M-DEL") 'kill-whole-line)
+(global-set-key (kbd "M-d") 'duplicate-line)
+
 ; mini buffer
 (global-set-key (kbd "M-x") 'helm-M-x)
