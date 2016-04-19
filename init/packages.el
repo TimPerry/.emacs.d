@@ -11,7 +11,7 @@
 
 ; list all the packages
 (setq package-list
-  '(use-package ibuffer magit operate-on-number grunt helm rainbow-delimiters powerline smex drag-stuff ido web-mode flycheck jsx-mode popwin dockerfile-mode neotree))
+  '(use-package ibuffer magit operate-on-number grunt helm rainbow-delimiters powerline smex drag-stuff ido web-mode flycheck jsx-mode popwin dockerfile-mode neotree projectile))
 
 ; activate all the packages
 (package-initialize)

@@ -8,6 +8,9 @@
 
 (use-package rainbow-delimiters)
 
+; projectile
+(projectile-global-mode)
+
 ; jpop
 (use-package jpop
   :load-path "packages/jpop"
