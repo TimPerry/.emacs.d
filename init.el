@@ -9,6 +9,20 @@
 (use-package rainbow-delimiters)
 (use-package helm)
 
+; jpop
+(use-package jpop
+  :load-path "packages/jpop"
+  :config
+  (jpop-global-mode)
+  (add-hook 'jpop-toggle-test-fallback-hook 'jpop-find-test)
+  :bind
+  ([C-tab] . jpop-find-file)
+  ("C-S-<tab>" . jpop-git-find-file)
+  ("C-x p f c" . jpop-change-and-find-file)
+  ("C-x p c" . jpop-change)
+  ("C-x C-b" . jpop-switch-buffer)
+  ("C-x C-p" . jpop-switch-and-find-file))
+
 ; theme
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'aurora t)
