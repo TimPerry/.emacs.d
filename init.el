@@ -23,7 +23,8 @@
   ("C-x C-b" . jpop-switch-buffer)
   ("C-x C-p" . jpop-switch-and-find-file))
 
-; theme
+; appearance
+(global-linum-mode 1)
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'aurora t)
 
