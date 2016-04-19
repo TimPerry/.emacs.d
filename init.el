@@ -31,6 +31,12 @@
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'aurora t)
 
+; context colouring
+(use-package context-coloring-mode
+  :defer t
+  :config (advice-add 'load-theme :after
+                      '(lambda (&rest args) (context-coloring-mode 0))))
+
 (use-package drag-stuff
   :config (drag-stuff-global-mode 1)
   :bind ("<A-S-down>" . drag-stuff-down)
