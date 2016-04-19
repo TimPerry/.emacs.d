@@ -13,7 +13,7 @@
 (setq package-list
   '(use-package ibuffer magit operate-on-number grunt helm rainbow-delimiters
   powerline smex drag-stuff ido web-mode flycheck jsx-mode popwin
-  dockerfile-mode neotree projectile context-coloring))
+  dockerfile-mode neotree projectile context-coloring auto-complete))
 
 ; activate all the packages
 (package-initialize)
