@@ -60,6 +60,10 @@
 (require 'dockerfile-mode)
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
+; neo-tree
+(require 'neotree)
+(global-set-key [f1] 'neotree-toggle)
+
 ;flycheck
 (global-flycheck-mode)
 
