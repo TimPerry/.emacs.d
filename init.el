@@ -33,6 +33,10 @@
   :bind ("<A-S-down>" . drag-stuff-down)
         ("<A-S-up>" . drag-stuff-up))
 
+; autocomplete
+(require 'ido)
+(ido-mode t)
+
 (use-package smex
   :config (smex-initialize)
   :bind ("M-x" . smex)
