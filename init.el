@@ -90,6 +90,8 @@
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
+(setq frame-title-format "Dr. Ian Malcolm: God help us, we're in the hands of engineers.")
+(scroll-bar-mode -1)
 (delete-selection-mode 1) ; Deleting selected text if typed in/pasted
 (fset 'yes-or-no-p 'y-or-n-p) ; Use y or n instead of yes or no
 (setq make-backup-files nil) ; Preventing backup (~) files
