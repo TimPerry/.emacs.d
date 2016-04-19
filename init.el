@@ -11,7 +11,7 @@
 
 ; theme
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
-(load-theme 'base16-3024-dark t)
+(load-theme 'aurora t)
 
 (use-package smex
   :config (smex-initialize)
