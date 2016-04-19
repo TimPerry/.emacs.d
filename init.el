@@ -7,19 +7,7 @@
 (require 'use-package)
 
 (use-package rainbow-delimiters)
-(use-package helm
-  :init
-  (setq helm-M-x-fuzzy-match t
-      helm-bookmark-show-location t
-      helm-buffers-fuzzy-matching t
-      helm-completion-in-region-fuzzy-match t
-      helm-file-cache-fuzzy-match t
-      helm-imenu-fuzzy-match t
-      helm-mode-fuzzy-match t
-      helm-locate-fuzzy-match t
-      helm-quick-update t
-      helm-recentf-fuzzy-match t
-      helm-semantic-fuzzy-match t))
+(use-package helm)
 
 ; theme
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
