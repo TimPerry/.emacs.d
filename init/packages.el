@@ -9,8 +9,6 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/")
-
 ; list all the packages
 (setq package-list
   '(use-package ibuffer magit operate-on-number grunt helm rainbow-delimiters powerline smex))
