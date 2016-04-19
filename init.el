@@ -56,8 +56,16 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+; docker-mode
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
 ;flycheck
 (global-flycheck-mode)
+
+; popwin
+(require 'popwin)
+(popwin-mode 1)
 
 ;; jsx
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
