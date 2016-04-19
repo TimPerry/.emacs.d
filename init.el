@@ -28,6 +28,11 @@
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'aurora t)
 
+(use-package drag-stuff
+  :config (drag-stuff-global-mode 1)
+  :bind ("<A-S-down>" . drag-stuff-down)
+        ("<A-S-up>" . drag-stuff-up))
+
 (use-package smex
   :config (smex-initialize)
   :bind ("M-x" . smex)
