@@ -39,9 +39,9 @@
         ("M-X" . smex-major-mode-commands)
         ("C-c M-x" . execute-extended-command))
 
-(use-package powerline
-  :init
-  (powerline-default-theme))
+;(use-package powerline
+;  :init
+;  (powerline-default-theme))
 
 ; reset
 (setq inhibit-startup-message t)
