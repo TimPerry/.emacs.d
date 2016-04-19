@@ -25,5 +25,6 @@
 (global-set-key (kbd "s-DEL") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
 
-; mini buffer
-(global-set-key (kbd "s-x") 'helm-M-x)
+; copy/paste
+(define-key global-map (kbd "s-v") 'yank)
+(define-key global-map (kbd "s-c") 'kill-ring-save)
