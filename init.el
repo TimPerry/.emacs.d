@@ -7,7 +7,6 @@
 (require 'use-package)
 
 (use-package rainbow-delimiters)
-(use-package helm)
 
 ; jpop
 (use-package jpop
