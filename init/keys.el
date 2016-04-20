@@ -25,6 +25,8 @@
 (global-set-key (kbd "s-DEL") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
 
+(global-set-key (kbd "M-.") 'jump-to-thing)
+
 ; copy/paste
 (define-key global-map (kbd "s-v") 'yank)
 (define-key global-map (kbd "s-c") 'kill-ring-save)

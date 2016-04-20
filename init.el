@@ -46,7 +46,9 @@
 
 ; autocomplete
 (use-package counsel :requires ivy
-  :bind ("M-x" . counsel-M-x))
+  :demand
+  :bind ("M-x" . counsel-M-x)
+        ("C-x C-f" . counsel-find-file))
 
 (use-package ivy
   :config (ivy-mode)
