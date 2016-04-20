@@ -30,3 +30,6 @@
 ; copy/paste
 (define-key global-map (kbd "s-v") 'yank)
 (define-key global-map (kbd "s-c") 'kill-ring-save)
+
+; undo
+(define-key global-map (kbd "s-z") 'undo)
