@@ -36,7 +36,7 @@
 ; context colouring
 (use-package context-coloring-mode
   :defer t
-  :config (advice-add 'load-theme :after
+  :config (advice-add 'load-theme :requires
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
 (use-package drag-stuff
@@ -45,8 +45,34 @@
         ("<A-S-up>" . drag-stuff-up))
 
 ; autocomplete
-(require 'ido)
-(ido-mode t)
+(use-package ido
+  :demand
+  :config
+  (ido-mode 1)
+  (setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)                     ; For dired use C-j to quit at that path
+  (setq ido-enable-regexp t)
+  (setq ido-create-new-buffer 'always)
+
+  (defalias 'ido-magic-forward-char 'ido-next-match)
+  (defalias 'ido-magic-backward-char 'ido-prev-match)
+
+  :bind
+  ("C-x C-f" . ido-find-file)
+  ("C-x f" . ido-find-file)
+  ("C-x F" . ido-find-file-other-window)
+  ("C-x B" . ido-switch-buffer-other-window)
+  ("C-x b" . ido-switch-buffer))
+
+(use-package ido-vertical-mode
+  :requires ido
+  :config (ido-vertical-mode 1)
+  (add-hook 'ido-vertical-mode-hook
+            '(lambda () (bind-keys :map ido-common-completion-map
+                              ("C-f" . ido-next-match)
+                              ("C-b" . ido-prev-match)))))
+
 
 (use-package smex
   :config (smex-initialize)
