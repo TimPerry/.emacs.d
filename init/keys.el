@@ -22,10 +22,8 @@
 
 (global-set-key (kbd "s-l") 'goto-line)
 
-(global-set-key (kbd "s-DEL") 'kill-whole-line)
+(global-set-key (kbd "s-<backspace>") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
-
-(global-set-key (kbd "M-.") 'jump-to-thing-at-point)
 
 ; copy/paste
 (define-key global-map (kbd "s-v") 'yank)

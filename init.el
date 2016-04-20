@@ -1,3 +1,8 @@
+;;; init.el --- my custom setup
+
+;;; Commentary:
+
+;;; code:
 (load "~/.emacs.d/init/custom")
 (load "~/.emacs.d/init/functions")
 (load "~/.emacs.d/init/keys")
@@ -106,3 +111,6 @@
 (fset 'yes-or-no-p 'y-or-n-p) ; Use y or n instead of yes or no
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
+
+(provide 'init)
+;;; init.el ends here
