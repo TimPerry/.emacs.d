@@ -45,8 +45,14 @@
         ("<A-S-up>" . drag-stuff-up))
 
 ; autocomplete
+(use-package counsel :requires ivy
+  :bind ("M-x" . counsel-M-x))
+
 (use-package ivy
-  :config (ivy-mode 1))
+  :config (ivy-mode)
+          (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  :bind ("C-c C-r" . ivy-resume)
+        ("C-s" . swiper))
 
 (use-package smex
   :config (smex-initialize)
