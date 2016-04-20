@@ -7,7 +7,9 @@
 
 (require 'use-package)
 
+; rainbow delimters
 (use-package rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ; projectile
 (projectile-global-mode)
