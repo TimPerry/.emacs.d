@@ -107,11 +107,29 @@
   (autoload 'scss-mode "scss-mode")
   (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
 
+; magit
+(use-package magit
+  :defer t
+  :config (bind-keys :map magit-mode-map
+                     ("o" . magit-open-file-other-window)
+                     ("C-c c" . magit-whitespace-cleanup)
+                     ("C-c e" . magit-vc-ediff)
+                     ("C-<tab>" . jpop-find-file)))
+
+(add-hook 'magit-mode-hook 'image-minor-mode)
+
+; css colours
+(use-package mon-css-color
+  :load-path "elisp"
+  :init (autoload 'css-color-mode "mon-css-color" "" t)
+  :config (css-color-global-mode))
+
 ; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
+(setq-default cursor-type 'bar)             ; Change cursor to bar
 (setq frame-title-format "Dr. Ian Malcolm: God help us, we're in the hands of engineers.")
 (scroll-bar-mode -1)
 (delete-selection-mode 1) ; Deleting selected text if typed in/pasted
