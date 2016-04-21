@@ -85,3 +85,10 @@
   (if mark-active
       (comment-or-uncomment-region (region-beginning) (region-end))
     (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
+
+
+(defun save-all ()
+  "Saving all buffers when losing focus."
+  (interactive)
+  (save-some-buffers t))
+(add-hook 'focus-out-hook 'save-all)
