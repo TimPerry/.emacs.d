@@ -13,6 +13,7 @@
 (global-set-key (kbd "s-k") '(lambda () (interactive) (kill-buffer (buffer-name))))
 (global-set-key (kbd "s-u") 'revert-buffer)
 (global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "<f9>") 'kill-all-buffers)
 
 ; nav
 (global-set-key (kbd "s-<left>") 'beginning-of-line)
