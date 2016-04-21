@@ -34,9 +34,11 @@
 (define-key global-map (kbd "s-c") 'kill-ring-save)
 
 ;magit
-(define-key global-map (kbd "<f2>") 'magit-diff)
+(define-key global-map (kbd "<f2>") 'magit-status)
 (define-key global-map (kbd "<f3>") 'magit-pull)
 (define-key global-map (kbd "<f4>") 'magit-push)
+
+brap
 
 ; undo
 (define-key global-map (kbd "s-z") 'undo)
