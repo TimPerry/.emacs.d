@@ -100,6 +100,14 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 
+;; sass-mode
+(use-package sass-mode
+  :init
+  (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
+  (autoload 'scss-mode "scss-mode")
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+ )
+
 ; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
