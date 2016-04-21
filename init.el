@@ -46,8 +46,8 @@
 
 (use-package drag-stuff
   :config (drag-stuff-global-mode 1)
-  :bind ("<A-S-down>" . drag-stuff-down)
-        ("<A-S-up>" . drag-stuff-up))
+  :bind ("<M-S-down>" . drag-stuff-down)
+        ("<M-S-up>" . drag-stuff-up))
 
 ; autocomplete
 (use-package ivy
@@ -105,8 +105,7 @@
   :init
   (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
   (autoload 'scss-mode "scss-mode")
-  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
- )
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
 
 ; misc
 (setq tab-width 2) ; Default tab-width
