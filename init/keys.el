@@ -38,7 +38,5 @@
 (define-key global-map (kbd "<f3>") 'magit-pull)
 (define-key global-map (kbd "<f4>") 'magit-push)
 
-brap
-
 ; undo
 (define-key global-map (kbd "s-z") 'undo)
