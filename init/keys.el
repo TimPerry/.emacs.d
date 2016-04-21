@@ -33,5 +33,8 @@
 (define-key global-map (kbd "s-v") 'yank)
 (define-key global-map (kbd "s-c") 'kill-ring-save)
 
+;magit
+(define-key global-map (kbd "<f2>") 'magit-diff)
+
 ; undo
 (define-key global-map (kbd "s-z") 'undo)
