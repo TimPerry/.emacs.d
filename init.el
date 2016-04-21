@@ -137,5 +137,9 @@
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
 
+;; diff
+(setq ediff-split-window-function (quote split-window-horizontally))
+(setq ediff-keep-variants nil)
+
 (provide 'init)
 ;;; init.el ends here
