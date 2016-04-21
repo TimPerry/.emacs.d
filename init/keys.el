@@ -2,6 +2,7 @@
 (setq mac-function-modifier 'hyper)
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
 ; app
 (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
