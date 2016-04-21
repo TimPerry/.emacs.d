@@ -26,6 +26,9 @@
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
 
+; commenting
+(global-set-key (kbd "s-/") 'dgc-comment)
+
 ; copy/paste
 (define-key global-map (kbd "s-v") 'yank)
 (define-key global-map (kbd "s-c") 'kill-ring-save)

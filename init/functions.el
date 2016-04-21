@@ -78,3 +78,10 @@
                      (not (eq nil (etags-select-find-tag-at-point))))
             (helm-swoop)))
       (etags-select-find-tag))))
+
+(defun dgc-comment ()
+  "comment or uncomment highlighted region or line"
+  (interactive)
+  (if mark-active
+      (comment-or-uncomment-region (region-beginning) (region-end))
+    (comment-or-uncomment-region (line-beginning-position) (line-end-position))))
