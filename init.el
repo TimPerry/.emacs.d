@@ -56,7 +56,7 @@
   :bind ("C-c C-r" . ivy-resume)
   ("C-s" . swiper)
   :config
-  (bind-keys :map ivy-mode-map
+  (bind-keys :map ivy-minibuffer-map
 	       ("RET" . ivy-alt-done)))
 
 (use-package counsel
@@ -141,6 +141,7 @@
 (show-paren-mode 1) ; Always show matching parenthesis
 
 ;; diff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function (quote split-window-horizontally))
 (setq ediff-keep-variants nil)
 
