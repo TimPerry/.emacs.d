@@ -54,7 +54,10 @@
   :init (ivy-mode)
           (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   :bind ("C-c C-r" . ivy-resume)
-        ("C-s" . swiper))
+  ("C-s" . swiper)
+  :config
+  (bind-keys :map ivy-mode-map
+	       ("RET" . ivy-alt-done)))
 
 (use-package counsel
   :requires ivy
