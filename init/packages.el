@@ -14,7 +14,7 @@
   '(use-package ibuffer magit operate-on-number grunt rainbow-delimiters
   powerline smex drag-stuff swiper  web-mode flycheck jsx-mode popwin
   dockerfile-mode neotree projectile context-coloring auto-complete counsel
-  scss-mode))
+  scss-mode undo-tree))
 
 ; activate all the packages
 (package-initialize)

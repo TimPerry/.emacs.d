@@ -96,8 +96,7 @@
 (global-flycheck-mode)
 
 ; popwin
-(require 'popwin)
-(popwin-mode 1)
+(require 'popwin)(popwin-mode 1)
 
 ;; jsx
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
@@ -126,6 +125,13 @@
   :load-path "elisp"
   :init (autoload 'css-color-mode "mon-css-color" "" t)
   :config (css-color-global-mode))
+
+(use-package undo-tree
+  :init
+  (global-undo-tree-mode 1)
+  (defalias 'redo 'undo-tree-redo)
+  :bind ("s-z" . undo)
+  ("s-Z" . redo))
 
 ; misc
 (setq tab-width 2) ; Default tab-width
