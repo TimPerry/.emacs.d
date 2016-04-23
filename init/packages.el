@@ -9,21 +9,5 @@
 (add-to-list 'package-archives
              '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
-; list all the packages
-(setq package-list
-  '(use-package ibuffer magit operate-on-number grunt rainbow-delimiters
-  smex drag-stuff swiper  web-mode flycheck jsx-mode popwin
-  dockerfile-mode neotree projectile context-coloring auto-complete counsel
-  scss-mode undo-tree))
-
 ; activate all the packages
 (package-initialize)
-
-; fetch the list of packages available
-(unless package-archive-contents
-  (package-refresh-contents))
-
-; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
