@@ -29,7 +29,7 @@
   ([C-tab] . jpop-find-file)
   ("C-S-<tab>" . jpop-git-find-file)
   ("C-x p f c" . jpop-change-and-find-file)
-  ("C-x p c" . jpop-change)
+  ("<f8>" . jpop-change)
   ("C-x C-b" . jpop-switch-buffer)
   ("C-x C-p" . jpop-switch-and-find-file))
 
