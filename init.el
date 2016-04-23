@@ -122,6 +122,7 @@
 
 ;; docker-mode
 (use-package docker
+  :ensure t
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 ;; neo-tree
