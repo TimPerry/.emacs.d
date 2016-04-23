@@ -1,4 +1,4 @@
-;;; init.el --- my custom setup
+;; init.el --- my custom setup
 
 ;;; Commentary:
 
@@ -14,11 +14,14 @@
 (require 'use-package)
 
 ;; rainbow delimters
-(use-package rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :ensure t
+  :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; projectile
-(projectile-global-mode)
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode))
 
 ;; jpop
 (use-package jpop
@@ -40,13 +43,15 @@
 (load-theme 'aurora t)
 
 ;; context colouring
-(use-package context-coloring-mode
+(use-package context-coloring
+  :ensure t
   :defer t
   :config (advice-add 'load-theme :requires
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
 ;; drag lines up and down
 (use-package drag-stuff
+  :ensure t
   :config (drag-stuff-global-mode 1)
   :bind ("<M-S-down>" . drag-stuff-down)
         ("<M-S-up>" . drag-stuff-up))
@@ -62,11 +67,13 @@
 	     ("RET" . ivy-alt-done)))
 
 (use-package counsel
+  :ensure t
   :requires ivy
   :bind ("M-x" . counsel-M-x)
         ("C-x C-f" . counsel-find-file))
 
 (use-package smex
+  :ensure t
   :config (smex-initialize)
   :bind ("M-x" . smex)
         ("M-X" . smex-major-mode-commands)
@@ -91,18 +98,21 @@
 ;;  (powerline-default-theme))
 
 ;; web-mode
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
+
 
 ;; docker-mode
-(require 'dockerfile-mode)
-(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+(use-package docker
+  :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 ;; neo-tree
 (use-package neotree
@@ -111,17 +121,18 @@
   :bind ("<f1>" . neotree-toggle))
 
 ;; flycheck
-(global-flycheck-mode)
+(use-package flycheck
+  :ensure t
+  :config (global-flycheck-mode))
 
 ;; popwin
-(require 'popwin)(popwin-mode 1)
-
-;; jsx
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+(use-package popwin
+  :ensure t
+  :config (popwin-mode 1))
 
 ;; sass-mode
 (use-package sass-mode
+  :ensure t
   :init
   (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
   (autoload 'scss-mode "scss-mode")
@@ -129,6 +140,7 @@
 
 ;; magit
 (use-package magit
+  :ensure t
   :defer t
   :config (bind-keys :map magit-mode-map
                      ("o" . magit-open-file-other-window)
@@ -138,13 +150,9 @@
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
-;; css colours
-(use-package mon-css-color
-  :init (autoload 'css-color-mode "mon-css-color" "" t)
-  :config (css-color-global-mode))
-
 ;; better redo/undo
 (use-package undo-tree
+  :ensure t
   :init
   (global-undo-tree-mode 1)
   (defalias 'redo 'undo-tree-redo)
@@ -171,29 +179,11 @@
 (show-paren-mode 1) ; Always show matching parenthesis
 (desktop-save-mode 1) ; Restore files on startup
 
-;; full screen that mother
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(jpop-completion-func (quote car))
- '(jpop-filter-regexps
-   (quote
-    ("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
- '(jpop-project-directory "~/Projects"))
-
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function (quote split-window-horizontally))
 (setq ediff-keep-variants nil)
 
+
 (provide 'init)
 ;;; init.el ends here
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
