@@ -80,14 +80,9 @@
         ("C-c M-x" . execute-extended-command))
 
 ;; autocomplete editor
-(use-package company
+(use-package auto-complete
   :ensure t
-  :init (add-hook 'after-init-hook 'global-company-mode))
-
-(use-package company-quickhelp
-  :ensure t
-  :requires company
-  :init (company-quickhelp-mode 1));
+  :config (ac-config-default))
 
 (use-package yasnippet
   :ensure t
@@ -109,6 +104,15 @@
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
 
+(use-package js2-mode
+  :ensure t
+  :config
+    (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+
+(use-package jsx-mode
+  :ensure t
+  :config
+    (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
 ;; docker-mode
 (use-package docker
