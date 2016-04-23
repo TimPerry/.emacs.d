@@ -32,6 +32,7 @@
 
 ; copy/paste
 (define-key global-map (kbd "s-v") 'yank)
+(define-key global-map (kbd "s-x") 'kill-region)
 (define-key global-map (kbd "s-c") 'kill-ring-save)
 
 ;magit
