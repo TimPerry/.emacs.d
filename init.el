@@ -66,6 +66,11 @@
   :ensure t
   :init (add-hook 'after-init-hook 'global-company-mode))
 
+(use-package company-quickhelp
+  :ensure t
+  :requires company
+  :init (company-quickhelp-mode 1));
+
 (use-package counsel
   :requires ivy
   :bind ("M-x" . counsel-M-x)
