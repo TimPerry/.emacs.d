@@ -61,16 +61,6 @@
   (bind-keys :map ivy-minibuffer-map
 	     ("RET" . ivy-alt-done)))
 
-;; autocomplete editor
-(use-package company
-  :ensure t
-  :init (add-hook 'after-init-hook 'global-company-mode))
-
-(use-package company-quickhelp
-  :ensure t
-  :requires company
-  :init (company-quickhelp-mode 1));
-
 (use-package counsel
   :requires ivy
   :bind ("M-x" . counsel-M-x)
@@ -81,6 +71,20 @@
   :bind ("M-x" . smex)
         ("M-X" . smex-major-mode-commands)
         ("C-c M-x" . execute-extended-command))
+
+;; autocomplete editor
+(use-package company
+  :ensure t
+  :init (add-hook 'after-init-hook 'global-company-mode))
+
+(use-package company-quickhelp
+  :ensure t
+  :requires company
+  :init (company-quickhelp-mode 1));
+
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode 1))
 
 ;;use-package powerline
 ;;  :init
@@ -101,8 +105,10 @@
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 ;; neo-tree
-(require 'neotree)
-(global-set-key [f1] 'neotree-find)
+(use-package neotree
+  :ensure t
+  :config (setq neo-smart-open t)
+  :bind ("<f1>" . neotree-toggle))
 
 ;; flycheck
 (global-flycheck-mode)
