@@ -12,14 +12,14 @@
 
 (require 'use-package)
 
-; rainbow delimters
+;; rainbow delimters
 (use-package rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-; projectile
+;; projectile
 (projectile-global-mode)
 
-; jpop
+;; jpop
 (use-package jpop
   :load-path "packages/jpop"
   :config
@@ -33,23 +33,24 @@
   ("C-x C-b" . jpop-switch-buffer)
   ("C-x C-p" . jpop-switch-and-find-file))
 
-; appearance
+;; appearance
 (global-linum-mode 1)
 (add-to-list 'custom-theme-load-path (concat base-path "/themes"))
 (load-theme 'aurora t)
 
-; context colouring
+;; context colouring
 (use-package context-coloring-mode
   :defer t
   :config (advice-add 'load-theme :requires
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
+;; drag lines up and down
 (use-package drag-stuff
   :config (drag-stuff-global-mode 1)
   :bind ("<M-S-down>" . drag-stuff-down)
         ("<M-S-up>" . drag-stuff-up))
 
-; autocomplete
+;; autocomplete
 (use-package ivy
   :init (ivy-mode)
           (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
@@ -70,11 +71,11 @@
         ("M-X" . smex-major-mode-commands)
         ("C-c M-x" . execute-extended-command))
 
-;use-package powerline
-;  :init
-;  (powerline-default-theme))
+;;use-package powerline
+;;  :init
+;;  (powerline-default-theme))
 
-; web-mode
+;; web-mode
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -84,18 +85,18 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-; docker-mode
+;; docker-mode
 (require 'dockerfile-mode)
 (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
-; neo-tree
+;; neo-tree
 (require 'neotree)
 (global-set-key [f1] 'neotree-toggle)
 
-;flycheck
+;; flycheck
 (global-flycheck-mode)
 
-; popwin
+;; popwin
 (require 'popwin)(popwin-mode 1)
 
 ;; jsx
@@ -109,7 +110,7 @@
   (autoload 'scss-mode "scss-mode")
   (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
 
-; magit
+;; magit
 (use-package magit
   :defer t
   :config (bind-keys :map magit-mode-map
@@ -120,12 +121,13 @@
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
-; css colours
+;; css colours
 (use-package mon-css-color
   :load-path "elisp"
   :init (autoload 'css-color-mode "mon-css-color" "" t)
   :config (css-color-global-mode))
 
+;; better redo/undo
 (use-package undo-tree
   :init
   (global-undo-tree-mode 1)
@@ -133,12 +135,13 @@
   :bind ("s-z" . undo)
   ("s-Z" . redo))
 
+;; multi line edit
 (use-package multiple-cursors
   :ensure t
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
-; misc
+;; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
 (setq inhibit-startup-message t)
@@ -151,7 +154,7 @@
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
 
-;full screen that mother
+;; full screen that mother
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
