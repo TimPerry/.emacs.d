@@ -70,7 +70,7 @@
         ("M-X" . smex-major-mode-commands)
         ("C-c M-x" . execute-extended-command))
 
-;(use-package powerline
+;use-package powerline
 ;  :init
 ;  (powerline-default-theme))
 
@@ -132,6 +132,11 @@
   (defalias 'redo 'undo-tree-redo)
   :bind ("s-z" . undo)
   ("s-Z" . redo))
+
+(use-package multiple-cursors
+  :ensure t
+  :bind ("M-<down>" . mc/mark-next-like-this)
+  ("M-<up>" . mc/mark-previous-like-this))
 
 ; misc
 (setq tab-width 2) ; Default tab-width
