@@ -146,6 +146,10 @@
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
 
+;full screen that mother
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function (quote split-window-horizontally))
