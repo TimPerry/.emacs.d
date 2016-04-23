@@ -102,7 +102,7 @@
 
 ;; neo-tree
 (require 'neotree)
-(global-set-key [f1] 'neotree-toggle)
+(global-set-key [f1] 'neotree-find)
 
 ;; flycheck
 (global-flycheck-mode)
@@ -167,7 +167,16 @@
 
 ;; full screen that mother
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(jpop-completion-func (quote car))
+ '(jpop-filter-regexps
+   (quote
+    ("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
+ '(jpop-project-directory "~/Projects"))
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
@@ -176,3 +185,9 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
