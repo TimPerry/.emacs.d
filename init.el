@@ -84,6 +84,11 @@
   :ensure t
   :config (ac-config-default))
 
+(use-package ac-js2
+  :ensure t
+  :requires auto-complete
+  :config (add-hook 'js2-mode-hook 'ac-js2-mode))
+
 (use-package yasnippet
   :ensure t
   :init (yas-global-mode 1))
