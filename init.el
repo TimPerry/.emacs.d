@@ -10,6 +10,7 @@
 
 (defconst base-path (file-name-directory load-file-name))
 
+;; bring in use-package
 (require 'use-package)
 
 ;; rainbow delimters
@@ -50,7 +51,7 @@
   :bind ("<M-S-down>" . drag-stuff-down)
         ("<M-S-up>" . drag-stuff-up))
 
-;; autocomplete
+;; autocomplete minibuffer
 (use-package ivy
   :init (ivy-mode)
           (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
@@ -58,7 +59,12 @@
   ("C-s" . swiper)
   :config
   (bind-keys :map ivy-minibuffer-map
-	       ("RET" . ivy-alt-done)))
+	     ("RET" . ivy-alt-done)))
+
+;; autocomplete editor
+(use-package company
+  :ensure t
+  :init (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package counsel
   :requires ivy
@@ -123,7 +129,6 @@
 
 ;; css colours
 (use-package mon-css-color
-  :load-path "elisp"
   :init (autoload 'css-color-mode "mon-css-color" "" t)
   :config (css-color-global-mode))
 
@@ -153,6 +158,7 @@
 (fset 'yes-or-no-p 'y-or-n-p) ; Use y or n instead of yes or no
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
+(desktop-save-mode 1) ; Restore files on startup
 
 ;; full screen that mother
 (custom-set-variables
