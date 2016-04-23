@@ -16,6 +16,8 @@
 (global-set-key (kbd "<f9>") 'kill-all-buffers)
 
 ; nav
+(global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "s-<down>") 'end-of-buffer)
 (global-set-key (kbd "s-<left>") 'beginning-of-line)
 (global-set-key (kbd "s-<right>") 'end-of-line)
 
