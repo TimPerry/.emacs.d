@@ -9,6 +9,7 @@
 (load "~/.emacs.d/init/packages")
 
 (defconst base-path (file-name-directory load-file-name))
+(setq custom-file (concat base-path "init/custom.el"))
 
 ;; bring in use-package
 (require 'use-package)
@@ -175,6 +176,10 @@
   :ensure t
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
+
+;; terminal
+(use-package shell-pop
+  :ensure t)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
