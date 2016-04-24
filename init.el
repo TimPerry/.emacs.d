@@ -121,6 +121,13 @@
   :config
     (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
+;; markdown mode
+(use-package markdown-mode
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
 ;; docker-mode
 (use-package docker
   :ensure t
