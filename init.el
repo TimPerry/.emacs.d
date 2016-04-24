@@ -121,6 +121,9 @@
   :config
     (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
+(use-package json-mode
+  :ensure t)
+
 ;; markdown mode
 (use-package markdown-mode
   :ensure t
