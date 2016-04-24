@@ -54,8 +54,11 @@
 (use-package drag-stuff
   :ensure t
   :config (drag-stuff-global-mode 1)
-  :bind ("<M-S-down>" . drag-stuff-down)
-        ("<M-S-up>" . drag-stuff-up))
+  (bind-keys :map drag-stuff-mode-map
+	     ("<M-S-down>" . drag-stuff-down)
+	     ("<M-S-left>" . drag-stuff-left)
+	     ("<M-S-right>" . drag-stuff-right)
+	     ("<M-S-up>" . drag-stuff-up)))
 
 ;; autocomplete minibuffer
 (use-package ivy
