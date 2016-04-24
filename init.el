@@ -128,10 +128,21 @@
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
+;; sass-mode
+(use-package sass-mode
+  :ensure t
+  :init
+  (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
+  (autoload 'scss-mode "scss-mode")
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
+
 ;; docker-mode
 (use-package docker
   :ensure t
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+
+(use-package php-mode
+  :ensure t)
 
 ;; neo-tree
 (use-package neotree
@@ -148,14 +159,6 @@
 (use-package popwin
   :ensure t
   :config (popwin-mode 1))
-
-;; sass-mode
-(use-package sass-mode
-  :ensure t
-  :init
-  (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
-  (autoload 'scss-mode "scss-mode")
-  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
 
 ;; magit
 (use-package magit
