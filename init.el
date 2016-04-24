@@ -99,9 +99,11 @@
   :ensure t
   :init (yas-global-mode 1))
 
-;;use-package powerline
-;;  :init
-;;  (powerline-default-theme))
+(use-package powerline
+  :ensure t
+  :init
+  (powerline-default-theme))
+(add-hook 'after-init-hook 'powerline-reset)
 
 ;; web-mode
 (use-package web-mode
