@@ -12,5 +12,8 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-; activate all the packages
+;; activate all the packages
 (package-initialize)
+
+;; install use package, the rest of the time we use :ensure to install.
+(package-install 'use-package);
