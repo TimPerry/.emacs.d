@@ -195,6 +195,11 @@
   :ensure t
   :bind ("s-e" . er/expand-region))
 
+;; aggressive-indent
+(use-package aggressive-indent
+  :ensure t
+  :config (global-aggressive-indent-mode 1))
+
 ;; terminal
 (use-package shell-pop
   :ensure t)
