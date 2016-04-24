@@ -53,17 +53,19 @@
 ;; drag lines up and down
 (use-package drag-stuff
   :ensure t
-  :config (drag-stuff-global-mode 1)
+  :init (setq drag-stuff-modifier 'ctrl) ; hack to stop drag-stuff setting key mappings over ones our existing
+  :config (drag-stuff-mode t)
   (bind-keys :map drag-stuff-mode-map
 	     ("<M-S-down>" . drag-stuff-down)
-	     ("<M-S-left>" . drag-stuff-left)
-	     ("<M-S-right>" . drag-stuff-right)
 	     ("<M-S-up>" . drag-stuff-up)))
+
+(eval-after-load "drag-stuff"
+  '(define-key drag-stuff-mode-map (kbd "<M-left>") nil))
 
 ;; autocomplete minibuffer
 (use-package ivy
   :init (ivy-mode)
-          (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   :bind ("C-c C-r" . ivy-resume)
   ("C-s" . swiper)
   :config
