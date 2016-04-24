@@ -211,6 +211,12 @@
 (use-package shell-pop
   :ensure t)
 
+(use-package shell
+  :ensure t
+  :config
+  (bind-keys :map shell-mode-map
+	     ("s-k" . erase-buffer)))
+
 ;; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
@@ -233,3 +239,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'erase-buffer 'disabled nil)
