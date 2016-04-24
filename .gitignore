@@ -2,3 +2,6 @@ auto-save-list
 elpa
 *.eld*
 *.last*
+.emacs.desktop*
+.mc-lists.el
+ac-comphist.dat
