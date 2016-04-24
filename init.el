@@ -184,6 +184,11 @@
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
+;; expand region
+(use-package expand-region
+  :ensure t
+  :bind ("s-e" . er/expand-region))
+
 ;; terminal
 (use-package shell-pop
   :ensure t)
