@@ -21,8 +21,8 @@
 (global-set-key (kbd "s-<left>") 'beginning-of-line)
 (global-set-key (kbd "s-<right>") 'end-of-line)
 
-(global-set-key (kbd "A-<left>") 'left-word)
-(global-set-key (kbd "A-<right>") 'right-word)
+(global-set-key (kbd "M-<left>") 'left-word)
+(global-set-key (kbd "M-<right>") 'right-word)
 
 (global-set-key (kbd "s-l") 'goto-line)
 
