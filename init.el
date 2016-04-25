@@ -1,3 +1,4 @@
+
 ;; init.el --- my custom setup
 
 ;;; Commentary:
@@ -216,6 +217,15 @@
   :config
   (bind-keys :map shell-mode-map
 	     ("s-k" . erase-buffer)))
+
+;; grunt
+(use-package grunt
+  :ensure t)
+
+;; rake
+
+(use-package rake
+  :ensure t)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
