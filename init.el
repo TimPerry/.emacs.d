@@ -185,7 +185,8 @@
   :bind ("s-e" . er/expand-region))
 
 ;; aggressive-indent
-(use-package aggressive-indent  
+(use-package aggressive-indent
+  :disabled t
   :config (global-aggressive-indent-mode 1))
 
 ;; terminal
