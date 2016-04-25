@@ -13,19 +13,19 @@
 
 ;; bring in use-package
 (require 'use-package)
+(setq use-package-always-ensure t)
 
 ;; rainbow delimters
 (use-package rainbow-delimiters
-  :ensure t
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; projectile
 (use-package projectile
-  :ensure t
   :config (projectile-global-mode))
 
 ;; jpop
 (use-package jpop
+  :ensure f
   :load-path "packages/jpop"
   :config
   (jpop-global-mode)
@@ -45,14 +45,12 @@
 
 ;; context colouring
 (use-package context-coloring
-  :ensure t
   :defer t
   :config (advice-add 'load-theme :requires
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
 ;; drag lines up and down
-(use-package drag-stuff
-  :ensure t
+(use-package drag-stuff 
   :init (setq drag-stuff-modifier 'ctrl) ; hack to stop drag-stuff setting key mappings over ones our existing
   :config (drag-stuff-mode t)
   (bind-keys :map drag-stuff-mode-map
@@ -64,6 +62,7 @@
 
 ;; autocomplete minibuffer
 (use-package ivy
+  :ensure f
   :init (ivy-mode)
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   :bind ("C-c C-r" . ivy-resume)
@@ -72,42 +71,36 @@
   (bind-keys :map ivy-minibuffer-map
 	     ("RET" . ivy-alt-done)))
 
-(use-package counsel
-  :ensure t
+(use-package counsel 
   :requires ivy
   :bind ("M-x" . counsel-M-x)
-        ("C-x C-f" . counsel-find-file))
+  ("C-x C-f" . counsel-find-file))
 
-(use-package smex
-  :ensure t
+(use-package smex 
   :config (smex-initialize)
   :bind ("M-x" . smex)
-        ("M-X" . smex-major-mode-commands)
-        ("C-c M-x" . execute-extended-command))
+  ("M-X" . smex-major-mode-commands)
+  ("C-c M-x" . execute-extended-command))
 
 ;; autocomplete editor
-(use-package auto-complete
-  :ensure t
+(use-package auto-complete 
   :config (ac-config-default))
-
-(use-package ac-js2
-  :ensure t
+(use-package ac-js2 
   :requires auto-complete
   :config (add-hook 'js2-mode-hook 'ac-js2-mode))
 
-(use-package yasnippet
-  :ensure t
+;; snippets
+(use-package yasnippet 
   :init (yas-global-mode 1))
 
-(use-package powerline
-  :ensure t
+;; poerline
+(use-package powerline 
   :init
   (powerline-default-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
 ;; web-mode
-(use-package web-mode
-  :ensure t
+(use-package web-mode 
   :config
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -117,30 +110,25 @@
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
 
-(use-package js2-mode
-  :ensure t
+(use-package js2-mode 
   :config
-    (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-    (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode)))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode)))
 
-(use-package jsx-mode
-  :ensure t
+(use-package jsx-mode 
   :config
-    (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
-(use-package json-mode
-  :ensure t)
+(use-package json-mode)
 
 ;; markdown mode
-(use-package markdown-mode
-  :ensure t
+(use-package markdown-mode 
   :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
 ;; scss-mode
-(use-package scss-mode
-  :ensure t
+(use-package scss-mode 
   :init
   (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
   (autoload 'scss-mode "scss-mode")
@@ -149,32 +137,27 @@
   (setq scss-compile-at-save nil))
 
 ;; docker-mode
-(use-package docker
-  :ensure t
+(use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
-(use-package php-mode
-  :ensure t)
+;; php mode
+(use-package php-mode)
 
 ;; neo-tree
 (use-package neotree
-  :ensure t
   :config (setq neo-smart-open t)
   :bind ("<f1>" . neotree-toggle))
 
 ;; flycheck
 (use-package flycheck
-  :ensure t
   :config (global-flycheck-mode))
 
 ;; popwin
 (use-package popwin
-  :ensure t
   :config (popwin-mode 1))
 
 ;; magit
 (use-package magit
-  :ensure t
   :defer t
   :config (bind-keys :map magit-mode-map
                      ("o" . magit-open-file-other-window)
@@ -185,8 +168,7 @@
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
 ;; better redo/undo
-(use-package undo-tree
-  :ensure t
+(use-package undo-tree 
   :init
   (global-undo-tree-mode 1)
   (defalias 'redo 'undo-tree-redo)
@@ -194,39 +176,30 @@
   ("s-Z" . redo))
 
 ;; multi line edit
-(use-package multiple-cursors
-  :ensure t
+(use-package multiple-cursors 
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
 ;; expand region
-(use-package expand-region
-  :ensure t
+(use-package expand-region 
   :bind ("s-e" . er/expand-region))
 
 ;; aggressive-indent
-(use-package aggressive-indent
-  :ensure t
+(use-package aggressive-indent  
   :config (global-aggressive-indent-mode 1))
 
 ;; terminal
-(use-package shell-pop
-  :ensure t)
-
-(use-package shell
-  :ensure t
+(use-package shell-pop)
+(use-package shell  
   :config
   (bind-keys :map shell-mode-map
 	     ("s-k" . erase-buffer)))
 
 ;; grunt
-(use-package grunt
-  :ensure t)
+(use-package grunt)
 
 ;; rake
-
-(use-package rake
-  :ensure t)
+(use-package rake)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
