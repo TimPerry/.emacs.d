@@ -1,4 +1,3 @@
-
 ;; init.el --- my custom setup
 
 ;;; Commentary:
