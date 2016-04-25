@@ -139,13 +139,15 @@
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
-;; sass-mode
-(use-package sass-mode
+;; scss-mode
+(use-package scss-mode
   :ensure t
   :init
   (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
   (autoload 'scss-mode "scss-mode")
-  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
+  (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+  :config
+  (setq scss-compile-at-save nil))
 
 ;; docker-mode
 (use-package docker
