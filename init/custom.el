@@ -15,7 +15,8 @@
  '(powerline-color2 "#1F2127" t)
  '(powerline-foreground "#FFFFFF")
  '(powerline-height 30)
- '(shell-pop-universal-key "s-t"))
+ '(shell-pop-universal-key "s-t")
+ '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -200,7 +200,12 @@
 (use-package grunt)
 
 ;; rake
-(use-package rake)
+(use-package rake
+  :ensure t)
+
+;; vagrant
+(use-package vagrant
+  :ensure t)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
@@ -224,3 +229,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'erase-buffer 'disabled nil)
