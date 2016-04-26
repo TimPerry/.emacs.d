@@ -226,6 +226,8 @@
 (setq ediff-split-window-function (quote split-window-horizontally))
 (setq ediff-keep-variants nil)
 
+;; games
+(use-package pacmacs)
 
 (provide 'init)
 ;;; init.el ends here
