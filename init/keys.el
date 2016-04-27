@@ -26,6 +26,8 @@
 
 (global-set-key (kbd "s-l") 'goto-line)
 
+(global-set-key (kbd "H-<backspace>") 'delete-char)
+
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
 
