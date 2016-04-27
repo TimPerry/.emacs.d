@@ -99,6 +99,9 @@
   (powerline-default-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
+;; window numbering
+(use-package window-numbering)
+
 ;; web-mode
 (use-package web-mode 
   :config
@@ -114,6 +117,8 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode)))
+
+(use-package web-beautify)
 
 (use-package jsx-mode 
   :config
