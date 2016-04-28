@@ -205,12 +205,11 @@
 (use-package grunt)
 
 ;; rake
-(use-package rake
-  :ensure t)
+(use-package rake)
 
 ;; vagrant
-(use-package vagrant
-  :ensure t)
+(use-package vagrant)
+(use-package vagrant-tramp)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
