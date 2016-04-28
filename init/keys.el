@@ -16,10 +16,15 @@
 (global-set-key (kbd "<f9>") 'kill-all-buffers)
 
 ; nav
+(global-set-key (kbd "H-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
+(global-set-key (kbd "H-<down>") 'end-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
+
+(global-set-key (kbd "H-<left>") 'beginning-of-line)
 (global-set-key (kbd "s-<left>") 'beginning-of-line)
 (global-set-key (kbd "s-<right>") 'end-of-line)
+(global-set-key (kbd "H-<right>") 'end-of-line)
 
 (global-set-key (kbd "M-<left>") 'left-word)
 (global-set-key (kbd "M-<right>") 'right-word)
