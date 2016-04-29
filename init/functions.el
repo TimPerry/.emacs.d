@@ -150,3 +150,23 @@
 (add-hook 'ediff-before-setup-hook 'my-ediff-bsh)
 (add-hook 'ediff-after-setup-windows-hook 'my-ediff-ash 'append)
 (add-hook 'ediff-quit-hook 'my-ediff-qh)
+
+(defun mwheel-scroll-all-function-all (func arg)
+  (if scroll-all-mode
+      (save-selected-window
+        (walk-windows 
+         (lambda (win)
+           (select-window win)
+           (condition-case nil
+               (funcall func arg)
+             (error nil)))))
+    (funcall func arg)))
+
+(defun mwheel-scroll-all-scroll-up-all (arg)
+  (mwheel-scroll-all-function-all 'scroll-up arg))
+
+(defun mwheel-scroll-all-scroll-down-all (arg)
+  (mwheel-scroll-all-function-all 'scroll-down arg))
+
+(setq mwheel-scroll-up-function 'mwheel-scroll-all-scroll-up-all)
+(setq mwheel-scroll-down-function 'mwheel-scroll-all-scroll-down-all)
