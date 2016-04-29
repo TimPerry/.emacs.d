@@ -232,6 +232,10 @@
 (setq ns-function-modifier 'hyper) ; set Hyper to Mac's Fn key
 (delete-selection-mode 1) ; Allows for deletion when typing over highlighted text
 (fset 'yes-or-no-p 'y-or-n-p) ; Use y or n instead of yes or no
+(setq echo-keystrokes 0.1
+      use-dialog-box nil
+      visible-bell t)
+(show-paren-mode t)
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
