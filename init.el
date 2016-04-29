@@ -195,6 +195,14 @@
 (use-package expand-region 
   :bind ("s-e" . er/expand-region))
 
+;; highlight keyword
+
+(use-package highlight-symbol
+  :bind ("s-h" . highlight-symbol)
+  ("s-H" . highlight-symbol-next)
+  ("M-s-H" . highlight-symbol-prev)
+  ("s-r" . highlight-symbol-query-replace))
+
 ;; aggressive-indent
 (use-package aggressive-indent
   :disabled t
