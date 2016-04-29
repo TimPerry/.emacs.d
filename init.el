@@ -50,9 +50,9 @@
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
 ;; drag lines up and down
-(use-package drag-stuff 
+(use-package drag-stuff
   :init (setq drag-stuff-modifier 'ctrl) ; hack to stop drag-stuff setting key mappings over ones our existing
-  :config (drag-stuff-mode t)
+  :config (drag-stuff-global-mode 1)
   (bind-keys :map drag-stuff-mode-map
 	     ("<M-S-down>" . drag-stuff-down)
 	     ("<M-S-up>" . drag-stuff-up)))
@@ -95,8 +95,8 @@
 
 ;; poerline
 (use-package powerline 
-  :init
-  (powerline-default-theme))
+ :init
+ (powerline-default-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
 ;; window numbering
