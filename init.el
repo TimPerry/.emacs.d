@@ -155,7 +155,8 @@
 
 ;; flycheck
 (use-package flycheck
-  :config (global-flycheck-mode))
+  :config (global-flycheck-mode)
+  (flycheck-add-mode 'javascript-eslint 'js2-mode))
 
 ;; popwin
 (use-package popwin
@@ -229,6 +230,12 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function (quote split-window-horizontally))
 (setq ediff-keep-variants nil)
+
+;; path fix
+(use-package exec-path-from-shell
+  :init
+  (when (memq window-system '(mac ns))
+    (exec-path-from-shell-initialize)))
 
 ;; games
 (use-package pacmacs)

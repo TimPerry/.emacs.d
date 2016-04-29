@@ -6,6 +6,7 @@
 
 ; app
 (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
+(global-set-key (kbd "<f6>") (lambda() (interactive)(load-file "~/.emacs.d/init.el")))
 
 ; buffers
 (global-set-key (kbd "s-{") 'previous-buffer)
@@ -35,6 +36,8 @@
 
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
+
+(define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
 ; commenting
 (global-set-key (kbd "s-/") 'dgc-comment)
