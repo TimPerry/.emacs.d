@@ -34,7 +34,7 @@
 
 (global-set-key (kbd "H-<backspace>") 'delete-char)
 
-(global-set-key (kbd "s-<backspace>") 'kill-whole-line)
+(global-set-key (kbd "s-<backspace>") 'delete-current-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
@@ -43,9 +43,9 @@
 (global-set-key (kbd "s-/") 'dgc-comment)
 
 ; copy/paste
-(define-key global-map (kbd "s-v") 'yank)
-(define-key global-map (kbd "s-x") 'kill-region)
-(define-key global-map (kbd "s-c") 'kill-ring-save)
+(global-set-key (kbd "s-c") 'pbcopy)
+(global-set-key (kbd "s-v") 'pbpaste)
+(global-set-key (kbd "s-x") 'pbcut)
 
 ;magit
 (define-key global-map (kbd "<f2>") 'magit-status)
