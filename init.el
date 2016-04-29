@@ -225,6 +225,13 @@
 (setq make-backup-files nil) ; Preventing backup (~) files
 (show-paren-mode 1) ; Always show matching parenthesis
 (desktop-save-mode 1) ; Restore files on startup
+(setq make-backup-files nil); don't make backup files
+(setq create-lockfiles nil) ; don't make lock files
+(setq auto-save-default nil) ; don't autosave
+(setq visible-bell nil) ; disables beep and use visible bell
+(setq ns-function-modifier 'hyper) ; set Hyper to Mac's Fn key
+(delete-selection-mode 1) ; Allows for deletion when typing over highlighted text
+(fset 'yes-or-no-p 'y-or-n-p) ; Use y or n instead of yes or no
 
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
