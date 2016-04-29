@@ -126,6 +126,11 @@
 
 (use-package json-mode)
 
+(use-package yaml-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+  (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode)))
+
 ;; markdown mode
 (use-package markdown-mode 
   :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
