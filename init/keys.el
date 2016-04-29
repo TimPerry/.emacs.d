@@ -39,6 +39,7 @@
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
+
 ; commenting
 (global-set-key (kbd "s-/") 'dgc-comment)
 
@@ -51,6 +52,11 @@
 (define-key global-map (kbd "<f2>") 'magit-status)
 (define-key global-map (kbd "<f3>") 'magit-pull)
 (define-key global-map (kbd "<f4>") 'magit-push)
+
+;; misc
+(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
 
 ;; dired
 (define-key global-map (kbd "<f8>") 'find-name-dired)
