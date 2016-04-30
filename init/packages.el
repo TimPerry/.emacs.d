@@ -17,3 +17,7 @@
 
 ;; install use package, the rest of the time we use :ensure to install.
 (package-install 'use-package);
+
+;; bring in use-package
+(require 'use-package)
+(setq use-package-always-ensure t)

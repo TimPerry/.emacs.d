@@ -7,13 +7,10 @@
 (load "~/.emacs.d/init/functions")
 (load "~/.emacs.d/init/keys")
 (load "~/.emacs.d/init/packages")
+(load "~/.emacs.d/init/cheatsheets")
 
 (defconst base-path (file-name-directory load-file-name))
 (setq custom-file (concat base-path "init/custom.el"))
-
-;; bring in use-package
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 ;; rainbow delimters
 (use-package rainbow-delimiters
@@ -206,13 +203,6 @@
 ;; expand region
 (use-package expand-region 
   :bind ("s-e" . er/expand-region))
-
-;; highlight keyword
-(use-package highlight-symbol
-  :bind ("s-h" . highlight-symbol)
-  ("s-H" . highlight-symbol-next)
-  ("M-s-H" . highlight-symbol-prev)
-  ("s-r" . highlight-symbol-query-replace))
 
 ;; jump mode
 (use-package ace-jump-mode
