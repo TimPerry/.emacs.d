@@ -184,6 +184,10 @@
 ;; git timemachine
 (use-package git-timemachine)
 
+;; git gutter
+(use-package git-gutter
+  :config (global-git-gutter-mode +1))
+
 ;; better redo/undo
 (use-package undo-tree
   :diminish undo-tree-mode
