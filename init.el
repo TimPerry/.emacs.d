@@ -262,6 +262,7 @@
       use-dialog-box nil
       visible-bell t)
 (show-paren-mode t)
+(put 'erase-buffer 'disabled nil)
 
 ;; date and time in status bar
 (setq display-time-day-and-date t
