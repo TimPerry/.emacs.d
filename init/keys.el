@@ -39,7 +39,6 @@
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
-
 ; commenting
 (global-set-key (kbd "s-/") 'dgc-comment)
 
@@ -57,6 +56,9 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
+
+;; toggle
+(global-set-key (kbd "s-U") 'xah-toggle-letter-case)
 
 ;; dired
 (define-key global-map (kbd "<f8>") 'find-name-dired)
