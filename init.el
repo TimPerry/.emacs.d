@@ -212,6 +212,10 @@
   ("M-s-H" . highlight-symbol-prev)
   ("s-r" . highlight-symbol-query-replace))
 
+;; visual-regexp
+(use-package visual-regexp
+  :bind ("s-r" . vr/replace))
+
 ;; aggressive-indent
 (use-package aggressive-indent
   :disabled t
