@@ -275,9 +275,15 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
+;; recent files
+(use-package recentf
+  :config
+  (recentf-mode 1)
+  (setq recentf-max-menu-items 25)
+  :bind ("<f7>" . recentf-open-files))
+
 ;; games
 (use-package pacmacs)
 
 (provide 'init)
 ;;; init.el ends here
-(put 'erase-buffer 'disabled nil)
