@@ -257,6 +257,11 @@
       visible-bell t)
 (show-paren-mode t)
 
+;; date and time in status bar
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+(display-time)
+
 ;; diff
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function (quote split-window-horizontally))
