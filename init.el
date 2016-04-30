@@ -184,6 +184,9 @@
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
+;; git timemachine
+(use-package git-timemachine)
+
 ;; better redo/undo
 (use-package undo-tree
   :diminish undo-tree-mode
