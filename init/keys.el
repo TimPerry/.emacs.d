@@ -42,10 +42,11 @@
 ; commenting
 (global-set-key (kbd "s-/") 'dgc-comment)
 
-; copy/paste
+; select, copy/paste
 (global-set-key (kbd "s-c") 'pbcopy)
 (global-set-key (kbd "s-v") 'pbpaste)
 (global-set-key (kbd "s-x") 'pbcut)
+(global-set-key (kbd "s-a") 'mark-whole-buffer)
 
 ;magit
 (define-key global-map (kbd "<f2>") 'magit-status)
