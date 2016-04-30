@@ -5,3 +5,5 @@ elpa
 .emacs.desktop*
 .mc-lists.el
 ac-comphist.dat
+recentf
+undohist
