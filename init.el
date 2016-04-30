@@ -21,6 +21,7 @@
 
 ;; projectile
 (use-package projectile
+	:diminish projectile-mode
   :config (projectile-global-mode))
 
 ;; jpop
@@ -51,6 +52,7 @@
 
 ;; drag lines up and down
 (use-package drag-stuff
+	:diminish drag-stuff-mode
   :init (setq drag-stuff-modifier 'ctrl) ; hack to stop drag-stuff setting key mappings over ones our existing
   :config (drag-stuff-global-mode 1)
   (bind-keys :map drag-stuff-mode-map
@@ -62,6 +64,7 @@
 
 ;; autocomplete minibuffer
 (use-package ivy
+	:diminish ivy-mode
   :ensure f
   :init (ivy-mode)
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
@@ -83,14 +86,16 @@
   ("C-c M-x" . execute-extended-command))
 
 ;; autocomplete editor
-(use-package auto-complete 
+(use-package auto-complete
+  :diminish auto-complete-mode
   :config (ac-config-default))
 (use-package ac-js2 
   :requires auto-complete
   :config (add-hook 'js2-mode-hook 'ac-js2-mode))
 
 ;; snippets
-(use-package yasnippet 
+(use-package yasnippet
+  :diminish yas-minor-mode
   :init (yas-global-mode 1))
 
 ;; poerline
@@ -160,6 +165,7 @@
 
 ;; flycheck
 (use-package flycheck
+	:diminish flycheck-mode
   :config (global-flycheck-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode))
 
@@ -179,7 +185,8 @@
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
 ;; better redo/undo
-(use-package undo-tree 
+(use-package undo-tree
+  :diminish undo-tree-mode
   :init
   (global-undo-tree-mode 1)
   (defalias 'redo 'undo-tree-redo)
