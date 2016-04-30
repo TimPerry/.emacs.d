@@ -201,3 +201,11 @@ Version 2016-01-08"
      ((equal 2 (get this-command 'state))
       (downcase-region p1 p2)
       (put this-command 'state 0)))))
+
+
+(defun toggle-cheatsheet ()
+  "Toggle the cheatsheet buffer"
+  (interactive)
+  (if (get-buffer "*cheatsheet*")
+      (kill-buffer "*cheatsheet*")
+    (cheatsheet-show)))

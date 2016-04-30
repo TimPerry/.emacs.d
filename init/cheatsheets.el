@@ -1,5 +1,5 @@
 (use-package cheatsheet
-  :bind ("<f12>" . cheatsheet-show))
+  :bind ("<f12>" . toggle-cheatsheet))
 
 (cheatsheet-add :group '"Function keys"
 								:key "F1"
