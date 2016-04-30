@@ -192,6 +192,8 @@
   (defalias 'redo 'undo-tree-redo)
   :bind ("s-z" . undo)
   ("s-Z" . redo))
+(use-package undohist
+  :config (undohist-initialize))
 
 ;; multi line edit
 (use-package multiple-cursors 
