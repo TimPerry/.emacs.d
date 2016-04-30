@@ -208,12 +208,16 @@
   :bind ("s-e" . er/expand-region))
 
 ;; highlight keyword
-
 (use-package highlight-symbol
   :bind ("s-h" . highlight-symbol)
   ("s-H" . highlight-symbol-next)
   ("M-s-H" . highlight-symbol-prev)
   ("s-r" . highlight-symbol-query-replace))
+
+;; jump mode
+(use-package ace-jump-mode
+  :bind ("s-j" . ace-jump-mode)
+  :bind ("s-i" . ace-jump-line-mode))
 
 ;; visual-regexp
 (use-package visual-regexp
