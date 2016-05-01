@@ -209,3 +209,9 @@ Version 2016-01-08"
   (if (get-buffer "*cheatsheet*")
       (kill-buffer "*cheatsheet*")
     (cheatsheet-show)))
+
+(defun clear-terminal ()
+  "Clear the terminal"
+  (interactive)
+  (erase-buffer)
+  (comint-send-input))

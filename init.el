@@ -227,7 +227,7 @@
 (use-package shell  
   :config
   (bind-keys :map shell-mode-map
-	     ("s-k" . erase-buffer)))
+	     ("s-k" . clear-terminal)))
 
 ;; grunt
 (use-package grunt)
