@@ -293,7 +293,7 @@
   :config
   (recentf-mode 1)
   (setq recentf-max-menu-items 25)
-  :bind ("<f7>" . recentf-open-files))
+  :bind ("<f10>" . recentf-open-files))
 
 ;; games
 (use-package pacmacs)

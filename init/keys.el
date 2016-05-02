@@ -50,7 +50,7 @@
 
 ;magit
 (define-key global-map (kbd "<f2>") 'magit-status)
-(define-key global-map (kbd "<f3>") 'magit-pull)
+(define-key global-map (kbd "<f3>") 'vc-ediff)
 (define-key global-map (kbd "<f4>") 'magit-push)
 
 ;; misc
