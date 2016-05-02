@@ -305,5 +305,8 @@
 (load "~/.emacs.d/init/custom")
 (load "~/.emacs.d/init/keys")
 
+;; show benchmark
+(benchmark-init/show-durations-tree)
+
 (provide 'init)
 ;;; init.el ends here
