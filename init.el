@@ -160,6 +160,10 @@
   :config (setq neo-smart-open t)
   :bind ("<f1>" . neotree-toggle))
 
+;; ibuffer
+(use-package ibuffer
+  :bind ("<f5>" . ibuffer))
+
 ;; flycheck
 (use-package flycheck
 	:diminish flycheck-mode
