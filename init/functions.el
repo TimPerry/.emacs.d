@@ -207,7 +207,8 @@ Version 2016-01-08"
   "Toggle the cheatsheet buffer"
   (interactive)
   (if (get-buffer "*cheatsheet*")
-      (kill-buffer "*cheatsheet*")
+			(progn (kill-buffer "*cheatsheet*")
+						 (delete-window))
     (cheatsheet-show)))
 
 (defun clear-terminal ()
