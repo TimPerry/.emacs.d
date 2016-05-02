@@ -208,6 +208,12 @@
 (use-package undohist
   :config (undohist-initialize))
 
+;; jump to thing
+(use-package dumb-jump
+  :init (dumb-jump-mode)
+  :bind ("s-b" . dumb-jump-go)
+  ("S-b" . dumb-jump-back))
+
 ;; multi line edit
 (use-package multiple-cursors 
   :bind ("M-<down>" . mc/mark-next-like-this)
