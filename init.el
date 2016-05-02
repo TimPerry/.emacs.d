@@ -23,6 +23,7 @@
 
 ;; jpop
 (use-package jpop
+  :diminish jpop-mode
   :ensure f
   :load-path "packages/jpop"
   :config
@@ -190,6 +191,7 @@
 
 ;; git gutter
 (use-package git-gutter
+  :diminish git-gutter-mode
   :config (global-git-gutter-mode +1))
 
 ;; better redo/undo
