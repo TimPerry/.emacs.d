@@ -149,6 +149,11 @@
   :config
   (setq scss-compile-at-save nil))
 
+;; hex colours
+(use-package rainbow-mode
+  :diminish rainbow-mode
+  :init (rainbow-mode))
+
 ;; docker-mode
 (use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
