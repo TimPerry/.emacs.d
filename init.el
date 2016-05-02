@@ -18,7 +18,7 @@
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-global-mode)
-  :bind ("C-M-i" . projectile-find-file))
+  :bind ("M-<tab>" . projectile-find-file))
 
 ;; jpop
 (use-package jpop
