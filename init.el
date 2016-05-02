@@ -156,6 +156,10 @@
 (use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
+;; ansible mode
+(use-package ansible
+  :init (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
+
 ;; php mode
 (use-package php-mode)
 
