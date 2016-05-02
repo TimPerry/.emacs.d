@@ -3,9 +3,7 @@
 ;;; Commentary:
 
 ;;; code:
-(load "~/.emacs.d/init/custom")
 (load "~/.emacs.d/init/functions")
-(load "~/.emacs.d/init/keys")
 (load "~/.emacs.d/init/packages")
 (load "~/.emacs.d/init/cheatsheets")
 
@@ -302,6 +300,10 @@
 
 ;; games
 (use-package pacmacs)
+
+;; load after everything else to make they get priority
+(load "~/.emacs.d/init/custom")
+(load "~/.emacs.d/init/keys")
 
 (provide 'init)
 ;;; init.el ends here
