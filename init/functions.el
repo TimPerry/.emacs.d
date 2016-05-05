@@ -216,3 +216,15 @@ Version 2016-01-08"
   (interactive)
   (erase-buffer)
   (comint-send-input))
+
+(defun multiply-pixels-in-buffer-by (by)
+	"Multiplies all the numbers in the current buffer from 720 to 540 values"
+	(interactive "Multiply by [e.g. 0.75, 1.5]: " 0.75)
+	(goto-char 1)
+	(while (search-forward-regexp "\\([0-9]+px\\)" nil t) 
+		(replace-match
+		 (concat (number-to-string
+			 (floor (*
+				 (string-to-number (match-string 1))
+				 (string-to-number by))))
+			"px") t nil)))
