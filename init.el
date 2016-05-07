@@ -309,6 +309,13 @@
   (setq recentf-max-menu-items 25)
   :bind ("<f10>" . recentf-open-files))
 
+;;
+(use-package tempbuf
+	:ensure nil
+  :load-path "packages/tempbuf"
+  :init
+  (add-hook 'after-change-major-mode-hook 'turn-on-tempbuf-mode))
+
 ;; games
 (use-package pacmacs)
 
