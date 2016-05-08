@@ -18,10 +18,11 @@
  '(powerline-color2 "#1F2127" t)
  '(powerline-foreground "#FFFFFF")
  '(powerline-height 30)
+ '(projectile-completion-system (quote ivy))
  '(shell-pop-universal-key "s-t")
  '(smex-flex-matching t)
  '(smex-prompt-string "Hold on to your butts: ")
- '(undohist-ignored-files '("COMMIT_EDITMSG"))
+ '(undohist-ignored-files (quote ("COMMIT_EDITMSG")))
  '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
