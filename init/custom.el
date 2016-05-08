@@ -21,6 +21,7 @@
  '(shell-pop-universal-key "s-t")
  '(smex-flex-matching t)
  '(smex-prompt-string "Hold on to your butts: ")
+ '(undohist-ignored-files '("COMMIT_EDITMSG"))
  '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
