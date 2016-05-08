@@ -61,6 +61,11 @@
 (eval-after-load "drag-stuff"
   '(define-key drag-stuff-mode-map (kbd "<M-left>") nil))
 
+;; smart stuff
+(use-package smart-forward
+  :bind ("<M-S-left>" . smart-backward)
+  ("<M-S-right>" . smart-forward))
+
 ;; autocomplete minibuffer
 (use-package ivy
 	:diminish ivy-mode
