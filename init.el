@@ -153,6 +153,9 @@
   :diminish rainbow-mode
   :init (rainbow-mode))
 
+;; org-mode
+(use-package org)
+
 ;; docker-mode
 (use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
