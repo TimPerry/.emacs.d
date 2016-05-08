@@ -176,6 +176,15 @@
 (use-package ibuffer
   :bind ("<f5>" . ibuffer))
 
+(use-package ibuffer-vc
+  :requires ibuffer
+  :config 
+  (add-hook 'ibuffer-hook
+	    (lambda ()
+	      (ibuffer-vc-set-filter-groups-by-vc-root)
+	      (unless (eq ibuffer-sorting-mode 'alphabetic)
+		(ibuffer-do-sort-by-alphabetic)))))
+
 ;; flycheck
 (use-package flycheck
 	:diminish flycheck-mode
