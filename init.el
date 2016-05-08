@@ -326,7 +326,8 @@
 
 ;;
 (use-package tempbuf
-	:ensure nil
+  :diminish tempbuf-mode
+  :ensure nil
   :load-path "packages/tempbuf"
   :init
   (add-hook 'after-change-major-mode-hook 'turn-on-tempbuf-mode))
