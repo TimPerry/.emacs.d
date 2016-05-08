@@ -18,7 +18,8 @@
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-global-mode)
-  :bind ("M-<tab>" . projectile-find-file))
+  :bind ("M-<tab>" . projectile-find-file)
+  ("s-O" . projectile-find-file))
 
 ;; jpop
 (use-package jpop
@@ -31,6 +32,7 @@
   :bind
   ([C-tab] . jpop-find-file)
   ("C-S-<tab>" . jpop-git-find-file)
+  ("s-o" . jpop-git-find-file)
   ("C-x p f c" . jpop-change-and-find-file)
   ("<f8>" . jpop-change)
   ("C-x C-b" . jpop-switch-buffer)
@@ -67,6 +69,7 @@
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
   :bind ("C-c C-r" . ivy-resume)
   ("C-s" . swiper)
+  ("s-f" . swiper)
   :config
   (bind-keys :map ivy-minibuffer-map
 	     ("RET" . ivy-alt-done)))
