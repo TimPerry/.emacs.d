@@ -159,6 +159,11 @@
 ;; org-mode
 (use-package org)
 
+;; deft
+(use-package deft
+  :config (setq deft-extensions '("txt" "tex" "org"))
+    (setq deft-directory "~/Dropbox/notes"))
+
 ;; docker-mode
 (use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
