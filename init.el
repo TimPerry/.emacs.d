@@ -16,6 +16,7 @@
 
 ;; workgroups
 (use-package workgroups2
+  :diminish workgroups-mode
   :init (workgroups-mode 1))
 
 ;; projectile
