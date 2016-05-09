@@ -237,7 +237,8 @@
 ;; git gutter
 (use-package git-gutter
   :diminish git-gutter-mode
-  :config (global-git-gutter-mode +1))
+  :config (global-git-gutter-mode +1)
+  (git-gutter:linum-setup))
 
 ;; better redo/undo
 (use-package undo-tree
