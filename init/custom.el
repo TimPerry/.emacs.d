@@ -23,6 +23,8 @@
  '(shell-pop-universal-key "s-t")
  '(smex-flex-matching t)
  '(smex-prompt-string "Hold on to your butts: ")
+ '(tempbuf-kill-message "%s bored me so I murderd it's face.")
+ '(tempbuf-minimum-timeout 300)
  '(undohist-ignored-files (quote ("COMMIT_EDITMSG")))
  '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox"))
 (custom-set-faces
