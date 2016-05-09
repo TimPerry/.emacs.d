@@ -25,6 +25,15 @@
   :bind ("M-<tab>" . projectile-find-file)
   ("s-O" . projectile-find-file))
 
+;; request (hud dependency)
+(use-package request)
+
+;; hud
+(use-package hud
+  :requires request
+  :ensure nil
+  :load-path "packages/hud")
+
 ;; jpop
 (use-package jpop
   :diminish jpop-mode
@@ -161,12 +170,15 @@
   :init (rainbow-mode))
 
 ;; org-mode
-(use-package org)
+(use-package org
+  :config (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+  (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode)))
 
 ;; deft
 (use-package deft
   :config (setq deft-extensions '("txt" "tex" "org"))
-    (setq deft-directory "~/Dropbox/notes"))
+  (setq deft-directory "~/Dropbox/notes")
+  :bind ("<f7>" . deft))
 
 ;; docker-mode
 (use-package docker  
