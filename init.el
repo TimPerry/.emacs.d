@@ -91,7 +91,7 @@
 (use-package counsel 
   :requires ivy
   :bind ("M-x" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file))
+  ("C-x C-f" . counsel-find-file)) 
 
 (use-package smex 
   :config (smex-initialize)
@@ -270,6 +270,10 @@
 (use-package ace-jump-mode
   :bind ("s-j" . ace-jump-mode)
   :bind ("s-i" . ace-jump-line-mode))
+
+;; jump mode zap
+(use-package ace-jump-zap
+  :bind ("s-p" . ace-jump-zap-to-char))
 
 ;; visual-regexp
 (use-package visual-regexp
