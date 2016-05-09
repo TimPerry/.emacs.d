@@ -14,6 +14,10 @@
 (use-package rainbow-delimiters
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
+;; workgroups
+(use-package workgroups2
+  :init (workgroups-mode 1))
+
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
