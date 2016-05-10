@@ -16,7 +16,6 @@
 
 ;; workgroups
 (use-package workgroups2
-  :defer t
   :diminish workgroups-mode
   :init (workgroups-mode 1))
 
@@ -28,12 +27,10 @@
   ("s-O" . projectile-find-file))
 
 ;; request (hud dependency)
-(use-package request
-  :defer t)
+(use-package request)
 
 ;; hud
 (use-package hud
-  :defer t
   :requires request
   :ensure nil
   :load-path "packages/hud")
@@ -112,7 +109,6 @@
 
 ;; snippets
 (use-package yasnippet
-  :defer t
   :diminish yas-minor-mode
   :init (yas-global-mode 1))
 
@@ -126,7 +122,7 @@
 (use-package window-numbering)
 
 ;; web-mode
-(use-package web-mode
+(use-package web-mode 
   :config
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -141,25 +137,21 @@
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode)))
 
-(use-package web-beautify
-  :defer t)
+(use-package web-beautify)
 
-(use-package jsx-mode
-  :defer t
+(use-package jsx-mode 
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
 (use-package json-mode)
 
 (use-package yaml-mode
-  :defer t
   :config
   (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
   (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode)))
 
 ;; markdown mode
-(use-package markdown-mode
-  :defer t
+(use-package markdown-mode 
   :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
@@ -180,7 +172,6 @@
 
 ;; org-mode
 (use-package org
-  :defer t
   :config (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
   (add-to-list 'auto-mode-alist '("\\.txt\\'" . org-mode)))
 
@@ -191,18 +182,15 @@
   :bind ("<f7>" . deft))
 
 ;; docker-mode
-(use-package docker
-  :defer t
+(use-package docker  
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 ;; ansible mode
 (use-package ansible
-  :defer t
   :init (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
 
 ;; php mode
-(use-package php-mode
-  :defer t)
+(use-package php-mode)
 
 ;; neo-tree
 (use-package neotree
@@ -243,8 +231,7 @@
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
 ;; git timemachine
-(use-package git-timemachine
-  :defer t)
+(use-package git-timemachine)
 
 ;; git gutter
 (use-package git-gutter
@@ -304,18 +291,14 @@
 	     ("s-k" . clear-terminal)))
 
 ;; grunt
-(use-package grunt
-  :defer t)
+(use-package grunt)
 
 ;; rake
-(use-package rake
-  :defer t)
+(use-package rake)
 
 ;; vagrant
-(use-package vagrant
-  :defer t)
-(use-package vagrant-tramp
-  :defer t)
+(use-package vagrant)
+(use-package vagrant-tramp)
 
 ;; misc
 (setq tab-width 2) ; Default tab-width
