@@ -91,12 +91,12 @@
   (bind-keys :map ivy-minibuffer-map
 	     ("RET" . ivy-alt-done)))
 
-(use-package counsel 
+(use-package counsel
   :requires ivy
   :bind ("M-x" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file)) 
+  ("C-x C-f" . counsel-find-file))
 
-(use-package smex 
+(use-package smex
   :config (smex-initialize)
   :bind ("M-x" . smex)
   ("M-X" . smex-major-mode-commands)
@@ -106,7 +106,7 @@
 (use-package auto-complete
   :diminish auto-complete-mode
   :config (ac-config-default))
-(use-package ac-js2 
+(use-package ac-js2
   :requires auto-complete
   :config (add-hook 'js2-mode-hook 'ac-js2-mode))
 
@@ -117,7 +117,7 @@
   :init (yas-global-mode 1))
 
 ;; poerline
-(use-package powerline 
+(use-package powerline
  :init
  (powerline-default-theme))
 (add-hook 'after-init-hook 'powerline-reset)
@@ -136,7 +136,7 @@
   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
 
-(use-package js2-mode 
+(use-package js2-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode)))
@@ -165,7 +165,7 @@
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
 
 ;; scss-mode
-(use-package scss-mode 
+(use-package scss-mode
   :init
   (setq exec-path (cons (expand-file-name "~/.rvm/gems/ruby-2.0.0-p481/bin/sass") exec-path))
   (autoload 'scss-mode "scss-mode")
@@ -186,7 +186,6 @@
 
 ;; deft
 (use-package deft
-  :defer t
   :config (setq deft-extensions '("txt" "tex" "org"))
   (setq deft-directory "~/Dropbox/notes")
   :bind ("<f7>" . deft))
@@ -216,7 +215,7 @@
 
 (use-package ibuffer-vc
   :requires ibuffer
-  :config 
+  :config
   (add-hook 'ibuffer-hook
 	    (lambda ()
 	      (ibuffer-vc-set-filter-groups-by-vc-root)
@@ -235,7 +234,6 @@
 
 ;; magit
 (use-package magit
-  :defer t
   :config (bind-keys :map magit-mode-map
                      ("o" . magit-open-file-other-window)
                      ("C-c c" . magit-whitespace-cleanup)
@@ -272,12 +270,12 @@
   ("S-b" . dumb-jump-back))
 
 ;; multi line edit
-(use-package multiple-cursors 
+(use-package multiple-cursors
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
 ;; expand region
-(use-package expand-region 
+(use-package expand-region
   :bind ("s-e" . er/expand-region))
 
 ;; jump mode
@@ -300,7 +298,7 @@
 
 ;; terminal
 (use-package shell-pop)
-(use-package shell  
+(use-package shell
   :config
   (bind-keys :map shell-mode-map
 	     ("s-k" . clear-terminal)))
