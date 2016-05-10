@@ -6,13 +6,15 @@
  '(desktop-save (quote ask))
  '(git-gutter:update-interval 5)
  '(ivy-display-style nil)
+ '(ivy-height 25)
  '(jpop-completion-func (quote car))
  '(jpop-filter-regexps
    (quote
-	("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
+    ("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
  '(jpop-project-directory "~/Projects")
  '(neo-theme (quote nerd))
  '(neo-window-width 40)
+ '(popwin:popup-window-height 25)
  '(powerline-color-alist (quote ((powerline-color1 1) (powerline-color2 1))) t)
  '(powerline-color0 "#3C444C")
  '(powerline-color1 "#96C348" t)
