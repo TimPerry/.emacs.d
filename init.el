@@ -132,19 +132,18 @@
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 	:config (bind-keys :map js2-mode-map
-										 ("C-c C-o" . js2r-order-vars-by-length)
-										 ("C-c C-s" . js2r-toggle-var-declaration)
-										 ("C-c C-v" . js2r-extract-var)
-										 ("C-c C-i" . js2r-inline-var)
-										 ("C-c C-f" . js2r-extract-function)
-										 ("C-c C-r" . js2r-rename-var)
-										 ("C-c C-l" . js2r-log-this)
-										 ("C-c ." . js2-jump-to-definition)
-										 ("C-k" . js2r-kill)))
+			   ("C-c C-o" . js2r-order-vars-by-length)
+			   ("C-c C-s" . js2r-toggle-var-declaration)
+			   ("C-c C-v" . js2r-extract-var)
+			   ("C-c C-i" . js2r-inline-var)
+			   ("C-c C-f" . js2r-extract-function)
+			   ("C-c C-r" . js2r-rename-var)
+			   ("C-c C-l" . js2r-log-this)
+			   ("C-c ." . js2-jump-to-definition)
+			   ("C-k" . js2r-kill)))
 
 (use-package js2-refactor
   :requires js2-mode)
-
 
 (use-package web-beautify)
 
@@ -303,6 +302,11 @@
 (use-package aggressive-indent
   :disabled t
   :config (global-aggressive-indent-mode 1))
+
+;; god mode
+(use-package god-mode
+  :bind ("<escape>" . god-mode-all)
+  :config (bind-keys :map god-mode-universal-argument-map ("." . repeat)))
 
 ;; terminal
 (use-package shell-pop)
