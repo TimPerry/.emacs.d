@@ -215,6 +215,10 @@
 (use-package popwin
   :config (popwin-mode 1))
 
+;; smooth scrolling
+(use-package smooth-scrolling
+  :init (smooth-scrolling-mode))
+
 ;; magit
 (use-package magit
   :config (bind-keys :map magit-mode-map
