@@ -107,7 +107,7 @@
   :diminish yas-minor-mode
   :init (yas-global-mode 1))
 
-;; poerline
+;; powerline
 (use-package powerline
  :init
  (powerline-default-theme))
