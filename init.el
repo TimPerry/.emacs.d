@@ -238,6 +238,10 @@
   :config (global-git-gutter-mode +1)
   (git-gutter:linum-setup))
 
+;;indent-guide
+(use-package indent-guide
+  :init (indent-guide-global-mode))
+
 ;; better redo/undo
 (use-package undo-tree
   :diminish undo-tree-mode
