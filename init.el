@@ -256,6 +256,10 @@
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
+;; smartparens
+(use-package smartparens
+  :init (smartparens-global-mode))
+
 ;; expand region
 (use-package expand-region
   :bind ("s-e" . er/expand-region))
