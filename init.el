@@ -113,6 +113,10 @@
  (powerline-default-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
+;; nyan mode
+(use-package nyan-mode
+  :init (nyan-mode))
+
 ;; window numbering
 (use-package window-numbering)
 
