@@ -325,6 +325,9 @@
 (use-package vagrant)
 (use-package vagrant-tramp)
 
+;; spray mode
+(use-package spray)
+
 ;; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
