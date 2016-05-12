@@ -85,8 +85,8 @@
 
 (use-package counsel
   :requires ivy
-  :bind ("M-x" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file))
+  :bind ("C-x C-f" . counsel-find-file)
+  ("s-g" . counsel-git-grep))
 
 (use-package smex
   :config (smex-initialize)
