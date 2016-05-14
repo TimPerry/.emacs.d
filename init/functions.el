@@ -1,3 +1,8 @@
+;; functions.el --- my custom functions
+
+;;; Commentary:
+
+;;; code:
 (defun duplicate-line ()
   (interactive)
   (move-beginning-of-line 1)
@@ -228,3 +233,21 @@ Version 2016-01-08"
 		       (floor (*
 			       (string-to-number (match-string 1))
 			       (string-to-number by)))))))))
+
+
+(defvar zurkon-quotes '("You used to be alive, then you met Mr. Zurkon."
+		       "Mr Zurkon does not believe in shoot first, ask questions later. Asking questions is stupid."))
+
+(defun random-mr-zurkon-quote ()
+  "Provides a random Mr Zurkon quote."
+  (nth
+   (random (length zurkon-quotes)) zurkon-quotes))
+
+(defun my-tempbuf-message (buffer-name)
+  "For a given BUFFER-NAME notify that it was kill with a mr zurkon quote."
+  (message (format "%s - Mr Zurkon killed %s"
+		   (random-mr-zurkon-quote)
+		   buffer-name)))
+
+(provide 'functions)
+;;; functions.el ends here
