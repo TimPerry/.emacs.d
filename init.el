@@ -245,17 +245,14 @@
                      ("C-<tab>" . jpop-find-file)))
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
-(add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
-(add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
 
 ;; git timemachine
 (use-package git-timemachine)
 
 ;; git gutter
-(use-package git-gutter
+(use-package git-gutter-fringe
   :diminish git-gutter-mode
-  :config (global-git-gutter-mode +1)
-  (git-gutter:linum-setup))
+  :config (git-gutter))
 
 ;;indent-guide
 (use-package indent-guide
