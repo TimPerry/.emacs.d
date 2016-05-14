@@ -2,6 +2,8 @@
 
 ;;; Commentary:
 
+;; my custom setup available at `https://github.com/TimPerry/.emacs.d`
+
 ;;; code:
 (load "~/.emacs.d/init/functions")
 (load "~/.emacs.d/init/packages")
