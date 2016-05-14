@@ -222,32 +222,33 @@ Version 2016-01-08"
   (erase-buffer)
   (comint-send-input))
 
-(defun multiply-pixels-in-buffer-by (by)
-  "Multiplies all the numbers in the current buffer from 720 to 540 values"
-  (interactive "Multiply by [e.g. 0.75, 1.5]: " 0.75)
-  (save-excursion
-    (goto-char (point-min))
-    (while (search-forward-regexp "\\([0-9]+px\\)" nil t) 
-      (replace-match
-       (format "%spx" (number-to-string
-		       (floor (*
-			       (string-to-number (match-string 1))
-			       (string-to-number by)))))))))
-
-
-(defvar zurkon-quotes '("You used to be alive, then you met Mr. Zurkon."
-		       "Mr Zurkon does not believe in shoot first, ask questions later. Asking questions is stupid."))
+(defun multiply-pixels-by (by)
+  "Multiplies all the pixels BY the given ammount."
+  (interactive "sMultiply by [e.g. 0.75, 1.5]: " 0.75)
+  (unless (use-region-p)
+    (error "Please select a region with pixel values in it."))
+  
+  (let ((modified 0))
+    (goto-char (region-beginning))
+    (while (search-forward-regexp "\\([0-9]+px\\)" (region-end) t)
+      (setq modified (1+ modified))
+      (replace-match (format "%spx"
+                             (floor (* (string-to-number by)
+                                       (string-to-number (match-string 1)))))))
+    (message "Modified '%d' pixels" modified)))
 
 (defun random-mr-zurkon-quote ()
   "Provides a random Mr Zurkon quote."
+  (let zurkon-quotes '("You used to be alive, then you met Mr. Zurkon."
+		       "Mr Zurkon does not believe in shoot first, ask questions later. Asking questions is stupid."))
   (nth
    (random (length zurkon-quotes)) zurkon-quotes))
 
 (defun my-tempbuf-message (buffer-name)
   "For a given BUFFER-NAME notify that it was kill with a mr zurkon quote."
-  (message (format "%s - Mr Zurkon killed %s"
-		   (random-mr-zurkon-quote)
-		   buffer-name)))
+  (message "%s - Mr Zurkon killed %s"
+	   (random-mr-zurkon-quote)
+	   buffer-name))
 
 (provide 'functions)
 ;;; functions.el ends here
