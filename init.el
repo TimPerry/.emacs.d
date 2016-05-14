@@ -333,6 +333,9 @@
 ;; spray mode
 (use-package spray)
 
+;; restart emacs
+(use-package restart-emacs)
+
 ;; misc
 (setq tab-width 2) ; Default tab-width
 (add-hook 'focus-out-hook 'save-all) ; Auto-saving when losing focus
