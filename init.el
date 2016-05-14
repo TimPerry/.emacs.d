@@ -253,8 +253,8 @@
 
 ;; git gutter
 (use-package git-gutter-fringe
-  :diminish git-gutter-mode
-  :config (git-gutter))
+  :if window-system
+  :config (global-git-gutter-mode))
 
 ;;indent-guide
 (use-package indent-guide
