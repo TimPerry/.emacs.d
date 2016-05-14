@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(desktop-save (quote ask))
- '(git-gutter:update-interval 0)
+ '(git-gutter:update-interval 2)
  '(ivy-display-style nil)
  '(ivy-height 25)
  '(jpop-completion-func (quote car))
