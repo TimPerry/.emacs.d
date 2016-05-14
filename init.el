@@ -121,7 +121,7 @@
 (use-package window-numbering)
 
 ;; web-mode
-(use-package web-mode 
+(use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -151,7 +151,7 @@
 
 (use-package web-beautify)
 
-(use-package jsx-mode 
+(use-package jsx-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
@@ -163,7 +163,7 @@
   (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode)))
 
 ;; markdown mode
-(use-package markdown-mode 
+(use-package markdown-mode
   :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
@@ -194,7 +194,7 @@
   :bind ("<f7>" . deft))
 
 ;; docker-mode
-(use-package docker  
+(use-package docker
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
 
 ;; ansible mode
@@ -245,6 +245,8 @@
                      ("C-<tab>" . jpop-find-file)))
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
+(add-hook 'git-gutter:update-hooks 'magit-after-revert-hook)
+(add-hook 'git-gutter:update-hooks 'magit-not-reverted-hook)
 
 ;; git timemachine
 (use-package git-timemachine)
