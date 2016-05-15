@@ -240,13 +240,24 @@ Version 2016-01-08"
 (defun random-mr-zurkon-quote ()
   "Provides a random Mr Zurkon quote."
   (let ((zurkon-quotes '("You used to be alive, then you met Mr. Zurkon."
-		      "Mr Zurkon does not believe in shoot first, ask questions later. Asking questions is stupid."))))
-  (nth
-   (random (length zurkon-quotes)) zurkon-quotes))
+			 "Flee before Mr. Zurkon!"
+			 "Mr. Zurkon still detects heartbeat. This is a problem for Mr. Zurkon."
+			 "Mr. Zurkon conducts a symphony of pain."
+			 "You are no match for the almighty Mr. Zurkon!"
+			 "Okay! Mr. Zurkon reloaded now."
+			 "Mr. Zurkon has killed before, and he will kill again."
+			 "Do you have the time? Just kidding. It is time to die o' clock."
+			 "Kill, kill, kill, die, die, die."
+			 "Time to kill, time to die, time to shoot you in the eye. It's Zurkon."
+			 "You are dead. And you are dead. And YOU are dead."
+			 "Mr. Zurkon gives you... a concerto of suffering."
+			 "Mr Zurkon does not believe in shoot first, ask questions later. Asking questions is stupid.")))
+    (nth
+      (random (length zurkon-quotes)) zurkon-quotes)))
 
 (defun my-tempbuf-message (buffer-name)
   "For a given BUFFER-NAME notify that it was kill with a mr zurkon quote."
-  (message "%s - buffer killed %s"
+  (message "%s Buffer %s killed"
 	   (random-mr-zurkon-quote)
 	   buffer-name))
 
