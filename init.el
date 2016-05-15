@@ -282,6 +282,10 @@
   :bind ("M-<down>" . mc/mark-next-like-this)
   ("M-<up>" . mc/mark-previous-like-this))
 
+;; smart new line
+(use-package smart-newline
+  :bind ("RET" . smart-newline))
+
 ;; smartparens
 (use-package smartparens
   :init (smartparens-global-mode))

@@ -29,8 +29,8 @@
 (global-set-key (kbd "s-<right>") 'end-of-line)
 (global-set-key (kbd "H-<right>") 'end-of-line)
 
-(global-set-key (kbd "M-<left>") 'left-word)
-(global-set-key (kbd "M-<right>") 'right-word)
+(global-set-key (kbd "M-<left>") 'backward-sexp)
+(global-set-key (kbd "M-<right>") 'forward-sexp)
 
 (global-set-key (kbd "s-l") 'goto-line)
 
@@ -56,7 +56,6 @@
 (define-key global-map (kbd "<f4>") 'magit-push)
 
 ;; misc
-(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 
