@@ -330,6 +330,11 @@
 ;; rake
 (use-package rake)
 
+;; npm
+(use-package npm
+  :ensure nil
+  :load-path "packages/npm")
+
 ;; vagrant
 (use-package vagrant)
 (use-package vagrant-tramp)
