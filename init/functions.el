@@ -17,6 +17,10 @@
   (interactive)
   (mapc 'kill-buffer (buffer-list)))
 
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (toggle-read-only))
 
 (defun jump-to-class ()
   "Find and go to the class at point"

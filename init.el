@@ -375,6 +375,10 @@
 (put 'erase-buffer 'disabled nil)
 (setq initial-scratch-message ";; Excuse me sir, do you have a moment to talk about our Lord, Savior, and the one true operating system, Emacs?\n");
 
+;; fix ansi colours
+(use-package ansi-color
+  :init(add-hook 'compilation-filter-hook 'colorize-compilation-buffer))
+
 ;; date and time in status bar
 (setq display-time-day-and-date t
       display-time-24hr-format t)
