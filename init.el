@@ -254,10 +254,12 @@
 ;; git gutter
 (use-package git-gutter-fringe
   :if window-system
+  :diminish git-gutter-mode
   :config (global-git-gutter-mode))
 
 ;;indent-guide
 (use-package indent-guide
+  :diminish indent-guide-mode
   :init (indent-guide-global-mode))
 
 ;; better redo/undo
@@ -288,6 +290,7 @@
 
 ;; smartparens
 (use-package smartparens
+  :diminish smartparens-mode
   :init (smartparens-global-mode))
 
 ;; expand region
