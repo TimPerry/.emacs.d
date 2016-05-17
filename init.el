@@ -315,11 +315,6 @@
   :disabled t
   :config (global-aggressive-indent-mode 1))
 
-;; god mode
-(use-package god-mode
-  :bind ("<escape>" . god-mode-all)
-  :config (bind-keys :map god-mode-universal-argument-map ("." . repeat)))
-
 ;; terminal
 (use-package shell-pop)
 (use-package shell
