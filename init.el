@@ -120,7 +120,8 @@
   :init (nyan-mode))
 
 ;; window numbering
-(use-package window-numbering)
+(use-package window-numbering
+  :init (window-numbering-mode))
 
 ;; web-mode
 (use-package web-mode

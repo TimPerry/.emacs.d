@@ -33,7 +33,8 @@
  '(tempbuf-kill-message-function (quote my-tempbuf-message))
  '(tempbuf-minimum-timeout 300)
  '(undohist-ignored-files (quote ("COMMIT_EDITMSG")))
- '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox"))
+ '(vagrant-project-directory "~/vagrant/tool-tal-pal-sandbox")
+ '(window-numbering-auto-assign-0-to-minibuffer t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
