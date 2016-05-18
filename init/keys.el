@@ -7,6 +7,7 @@
 ; app
 (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "<f6>") (lambda() (interactive)(load-file "~/.emacs.d/init.el")))
+(global-set-key (kbd "<escape>") 'keyboard-quit)
 
 ; buffers
 (global-set-key (kbd "s-{") 'previous-buffer)
