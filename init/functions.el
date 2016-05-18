@@ -265,5 +265,14 @@ Version 2016-01-08"
 	   (random-mr-zurkon-quote)
 	   buffer-name))
 
+(defun select-backward-same-syntax ()
+  "Selects backwards for the same syntax"
+  (interactive)
+
+  (when (not (region-active-p))
+    (push-mark (point) t t))
+
+  (forward-same-syntax -1))
+
 (provide 'functions)
 ;;; functions.el ends here

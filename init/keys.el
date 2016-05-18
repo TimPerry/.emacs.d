@@ -29,12 +29,13 @@
 (global-set-key (kbd "s-<right>") 'end-of-line)
 (global-set-key (kbd "H-<right>") 'end-of-line)
 
+(global-set-key (kbd "M-S-<left>") 'select-backward-same-syntax)
 (global-set-key (kbd "M-<left>") '(lambda () (interactive) (forward-same-syntax -1)))
 (global-set-key (kbd "M-<right>") 'forward-same-syntax)
 
 (global-set-key (kbd "s-l") 'goto-line)
 
-(global-set-key (kbd "H-<backspace>") 'delete-char)
+(global-set-key (kbd "H-<backspace>") 'delete-char) 
 
 (global-set-key (kbd "s-<backspace>") 'delete-current-line)
 (global-set-key (kbd "s-d") 'duplicate-line)
