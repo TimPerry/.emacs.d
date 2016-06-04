@@ -8,6 +8,7 @@
 (load "~/.emacs.d/init/functions")
 (load "~/.emacs.d/init/packages")
 (load "~/.emacs.d/init/cheatsheets")
+(load "~/.emacs.d/init/hydra")
 
 (defconst base-path (file-name-directory load-file-name))
 (setq custom-file (concat base-path "init/custom.el"))
