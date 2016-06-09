@@ -124,20 +124,34 @@
 (use-package window-numbering
   :init (window-numbering-mode))
 
-;; web-mode
-(use-package web-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode)))
-
+;; emmet-mode
 (use-package emmet-mode
   :config (add-hook 'sgml-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook  'emmet-mode))
+
+;; web-mode
+(use-package web-mode
+  :mode
+  ("\\.html$" . web-mode)
+  ("\\.spv$" . web-mode)
+  ("\\.erb$" . web-mode)
+  ("\\.mustache$" . web-mode)
+  ("\\.hbs$" . web-mode)
+  ("\\.partial$" . web-mode)
+  ("\\.jsx$" . web-mode)
+
+  :config
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2)
+
+  (defadvice web-mode-highlight-part (around tweak-jsx activate)
+    (if (equal web-mode-content-type "jsx")
+        (let ((web-mode-enable-part-face nil)) ad-do-it)
+      ad-do-it))
+
+  (add-hook 'web-mode-hook
+            (lambda () (when (equal web-mode-content-type "jsx") (tern-mode)))))
 
 (use-package js2-mode
   :config
