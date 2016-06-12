@@ -12,7 +12,6 @@
 ; buffers
 (global-set-key (kbd "s-{") 'previous-buffer)
 (global-set-key (kbd "s-}") 'next-buffer)
-(global-set-key (kbd "s-k") '(lambda () (interactive) (kill-buffer (buffer-name))))
 (global-set-key (kbd "s-w") '(lambda () (interactive) (delete-window)))
 (global-set-key (kbd "s-t") '(lambda () (interactive) (split-window-right)))
 (global-set-key (kbd "s-u") 'revert-buffer)

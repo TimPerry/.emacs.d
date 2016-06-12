@@ -1,14 +1,9 @@
-(use-package hydra)
+(use-package hydra
+  :bind ("s-k" . hydra-kill-buffers/body))
 
-(defhydra hydra-vi (:pre (set-cursor-color "#40e0d0")
-			 :post (progn
-				 (set-cursor-color "#ffffff")
-				 (message
-				  "Thank you, come again.")))
-  "vi"
-  ("l" forward-char)
-  ("h" backward-char)
-  ("j" next-line)
-  ("k" previous-line)
+(defhydra hydra-kill-buffers
+  "Kill Buffers"
+  ("a" kill-all-buffers "All")
+  ("c" kill-current-buffer "Current")
+  ("o" kill-other-buffers "Other")
   ("q" nil "quit"))
-
