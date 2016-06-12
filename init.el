@@ -155,6 +155,7 @@
 
 (use-package js2-mode
   :config
+  (setq js2-indent-switch-body t)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
 	:config (bind-keys :map js2-mode-map
