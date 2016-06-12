@@ -3,6 +3,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(calendar-week-start-day 1)
+ '(custom-safe-themes
+   (quote
+    ("f146cf0feba4fed38730de65e924e26140b470a4d503287e9ddcf7cca0b5b3f0" "dc1a336969593b934cdea0b133930fe893d1a091cfeb3c0ca0bb5312cd8d27a5" default)))
  '(desktop-save (quote ask))
  '(git-gutter:update-interval 2)
  '(ivy-display-style nil)
