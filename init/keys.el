@@ -37,8 +37,8 @@
 (global-set-key (kbd "s-l") 'goto-line)
 
 (global-set-key (kbd "H-<backspace>") 'delete-char) 
-
 (global-set-key (kbd "s-<backspace>") 'delete-current-line)
+(global-set-key (read-kbd-macro "<M-DEL>") 'backward-delete-word)
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
