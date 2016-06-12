@@ -73,6 +73,10 @@
 (eval-after-load "drag-stuff"
   '(define-key drag-stuff-mode-map (kbd "<M-left>") nil))
 
+;; duplication things
+(use-package duplicate-thing
+  :bind ("s-d" . duplicate-thing))
+
 ;; autocomplete minibuffer
 (use-package ivy
 	:diminish ivy-mode

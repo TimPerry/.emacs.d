@@ -39,7 +39,6 @@
 (global-set-key (kbd "H-<backspace>") 'delete-char) 
 
 (global-set-key (kbd "s-<backspace>") 'delete-current-line)
-(global-set-key (kbd "s-d") 'duplicate-line)
 
 (define-key global-map (kbd "<S-down-mouse-1>") 'mouse-save-then-kill)
 
