@@ -122,7 +122,7 @@
 ;; powerline
 (use-package powerline
  :init
- (powerline-default-theme))
+ (powerline-center-evil-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
 ;; nyan mode
