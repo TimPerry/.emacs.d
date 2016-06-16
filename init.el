@@ -61,6 +61,11 @@
   :config (advice-add 'load-theme :requires
                       '(lambda (&rest args) (context-coloring-mode 0))))
 
+;; evil (vim) mode
+(use-package evil
+  :config (setq evil-default-cursor t)
+  (evil-mode t))
+
 ;; drag lines up and down
 (use-package drag-stuff
 	:diminish drag-stuff-mode
