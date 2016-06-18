@@ -130,8 +130,10 @@
   :init (nyan-mode))
 
 ;; window numbering
-(use-package window-numbering
-  :init (window-numbering-mode))
+(use-package wn-mode
+  :init
+  (setq wn-keybinding-format "s-%s")
+  (wn-mode))
 
 ;; emmet-mode
 (use-package emmet-mode
