@@ -50,6 +50,7 @@
 (global-set-key (kbd "s-V") 'counsel-yank-pop)
 (global-set-key (kbd "s-x") 'pbcut)
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
+(global-set-key (kbd "s-E") `enumerate-rectangle)
 
 ;magit
 (define-key global-map (kbd "<f2>") 'magit-status)

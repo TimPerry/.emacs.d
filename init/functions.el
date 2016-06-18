@@ -289,6 +289,32 @@ With argument, do this that many times."
   (interactive "p")
   (delete-word (- arg)))
 
+(defvar enumerate-line-num)
+
+(defun enumerate-line (start end fmt)
+  (string-rectangle-line start end (format fmt enumerate-line-num) t)
+  (incf enumerate-line-num))
+
+(defun enumerate-rectangle (start end &optional first-number)
+  "Replace the region-rectangle with numbers beginning at 1 and incrementing for each line.
+
+You can use the universal argument to change the initial value.
+For example, to start counting lines at zero:
+
+C-u 0 M-x enumerate-rectangle"
+  (interactive "*r\np")
+  (setq enumerate-line-num first-number)
+  (let (line0 lineN fmt)
+    (save-excursion
+      (goto-char start)
+      (setq line0 (line-number-at-pos))
+      (goto-char end)
+      (setq lineN (line-number-at-pos)))
+    (setq fmt (concatenate 'string 
+                           "%" 
+                           (format "%0d" (string-width (format "%0d" (+ enumerate-line-num (- lineN line0)))))  
+                           ".1d"))
+    (apply-on-rectangle 'enumerate-line start end fmt)))
 
 (provide 'functions)
 ;;; functions.el ends here
