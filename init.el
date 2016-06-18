@@ -68,7 +68,7 @@
 
 ;; drag lines up and down
 (use-package drag-stuff
-	:diminish drag-stuff-mode
+  :diminish drag-stuff-mode
   :init (setq drag-stuff-modifier 'ctrl) ; hack to stop drag-stuff setting key mappings over ones our existing
   :config (drag-stuff-global-mode 1)
   (bind-keys :map drag-stuff-mode-map
@@ -84,7 +84,7 @@
 
 ;; autocomplete minibuffer
 (use-package ivy
-	:diminish ivy-mode
+  :diminish ivy-mode
   :ensure f
   :init (ivy-mode)
   (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
@@ -125,8 +125,9 @@
 
 ;; powerline
 (use-package powerline
- :init
- (powerline-center-evil-theme))
+  :init
+  (powerline-default-theme)
+  (powerline-center-evil-theme))
 (add-hook 'after-init-hook 'powerline-reset)
 
 ;; nyan mode
@@ -173,16 +174,16 @@
   (setq js2-indent-switch-body t)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
-	:config (bind-keys :map js2-mode-map
-			   ("C-c C-o" . js2r-order-vars-by-length)
-			   ("C-c C-s" . js2r-toggle-var-declaration)
-			   ("C-c C-v" . js2r-extract-var)
-			   ("C-c C-i" . js2r-inline-var)
-			   ("C-c C-f" . js2r-extract-function)
-			   ("C-c C-r" . js2r-rename-var)
-			   ("C-c C-l" . js2r-log-this)
-			   ("C-c ." . js2-jump-to-definition)
-			   ("C-k" . js2r-kill)))
+  :config (bind-keys :map js2-mode-map
+		     ("C-c C-o" . js2r-order-vars-by-length)
+		     ("C-c C-s" . js2r-toggle-var-declaration)
+		     ("C-c C-v" . js2r-extract-var)
+		     ("C-c C-i" . js2r-inline-var)
+		     ("C-c C-f" . js2r-extract-function)
+		     ("C-c C-r" . js2r-rename-var)
+		     ("C-c C-l" . js2r-log-this)
+		     ("C-c ." . js2-jump-to-definition)
+		     ("C-k" . js2r-kill)))
 
 (use-package js2-refactor
   :requires js2-mode)
@@ -262,12 +263,11 @@
 
 ;; flycheck
 (use-package flycheck
-	:diminish flycheck-mode
+  :diminish flycheck-mode
   :config (global-flycheck-mode)
   (flycheck-add-mode 'javascript-eslint 'js2-mode))
 
 (use-package flycheck-pos-tip
-  :after flycheck
   :config (flycheck-pos-tip-mode))
 
 ;; popwin
