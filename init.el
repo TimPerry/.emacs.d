@@ -114,6 +114,10 @@
   :requires auto-complete
   :config (add-hook 'js2-mode-hook 'ac-js2-mode))
 
+;; whitespace cleanup
+(use-package whitespace-cleanup-mode
+  :init (global-whitespace-cleanup-mode))
+
 ;; snippets
 (use-package yasnippet
   :diminish yas-minor-mode
