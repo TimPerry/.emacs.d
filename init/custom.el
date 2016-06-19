@@ -48,6 +48,6 @@
  '(powerline-active2 ((t (:inherit mode-line :background "#96C348"))))
  '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "#2C3B40"))))
  '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "#ebebeb" :foreground "#252525"))))
- '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#97C150"))))
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#4C5725"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "#1F2127"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "#FFFFFF")))))
