@@ -142,6 +142,13 @@
 (add-hook 'after-init-hook 'powerline-reset)
 
 (use-package powerline-evil)
+(use-package evil-matchit
+  :diminish t
+  :init (global-evil-matchit-mode 1))
+
+(use-package evil-snipe
+  :diminish t
+  :init (evil-snipe-mode 1))
 
 ;; nyan mode
 (use-package nyan-mode
