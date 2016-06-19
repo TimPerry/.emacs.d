@@ -128,6 +128,7 @@
 
 ;; whitespace cleanup
 (use-package whitespace-cleanup-mode
+  :diminish whitespace-cleanup-mode
   :init (global-whitespace-cleanup-mode))
 
 ;; snippets
@@ -147,7 +148,7 @@
   :init (global-evil-matchit-mode 1))
 
 (use-package evil-snipe
-  :diminish t
+  :diminish evil-snipe-mode
   :init (evil-snipe-mode 1))
 
 ;; nyan mode
