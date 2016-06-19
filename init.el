@@ -75,8 +75,8 @@
 
 (use-package evil-snipe
   :requires evil
-  :defer t
-  :init (evil-snipe-mode))
+  :diminish evil-snipe-local-mode
+  :init (evil-snipe-mode 1))
 
 ;; drag lines up and down
 (use-package drag-stuff
@@ -146,10 +146,6 @@
 (use-package evil-matchit
   :diminish t
   :init (global-evil-matchit-mode 1))
-
-(use-package evil-snipe
-  :diminish evil-snipe-mode
-  :init (evil-snipe-mode 1))
 
 ;; nyan mode
 (use-package nyan-mode
