@@ -64,7 +64,16 @@
 ;; evil (vim) mode
 (use-package evil
   :config (setq evil-default-cursor t)
+  (bind-keys :map evil-normal-state-map
+	     ("r" . evilmr-replace-in-defun))
   (evil-mode t))
+
+(use-package evil-mark-replace)
+
+(use-package evil-snipe
+  :requires evil
+  :defer t
+  :init (evil-snipe-mode))
 
 ;; drag lines up and down
 (use-package drag-stuff
