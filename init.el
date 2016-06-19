@@ -70,6 +70,9 @@
 
 (use-package evil-mark-replace)
 
+(use-package evil-easymotion
+  :init (evilem-default-keybindings "SPC"))
+
 (use-package evil-snipe
   :requires evil
   :defer t
