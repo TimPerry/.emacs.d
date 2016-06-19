@@ -126,9 +126,10 @@
 ;; powerline
 (use-package powerline
   :init
-  (powerline-default-theme)
-  (powerline-center-evil-theme))
+  (powerline-evil-center-color-theme))
 (add-hook 'after-init-hook 'powerline-reset)
+
+(use-package powerline-evil)
 
 ;; nyan mode
 (use-package nyan-mode

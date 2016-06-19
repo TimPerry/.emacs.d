@@ -46,5 +46,8 @@
  ;; If there is more than one, they won't work right.
  '(powerline-active1 ((t (:inherit mode-line :background "#3C444C"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#96C348"))))
+ '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "#2C3B40"))))
+ '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "#ebebeb" :foreground "#252525"))))
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#97C150"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "#1F2127"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "#FFFFFF")))))
