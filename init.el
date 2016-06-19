@@ -184,7 +184,9 @@
 		     ("C-c C-r" . js2r-rename-var)
 		     ("C-c C-l" . js2r-log-this)
 		     ("C-c ." . js2-jump-to-definition)
-		     ("C-k" . js2r-kill)))
+		     ("C-k" . js2r-kill))
+    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?- "w")))
+    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?_ "w"))))
 
 (use-package js2-refactor
   :requires js2-mode)
