@@ -1,3 +1,11 @@
+;; packages.el --- my custom package setup
+
+;;; Commentary:
+
+;; my custom setup available at `https://github.com/TimPerry/.emacs.d`
+
+;;; code:
+
 (require 'package)
 
 (add-to-list 'package-archives
@@ -35,3 +43,9 @@
     (local-set-key "f" 'set-font)
     (local-set-key "p" 'jpop-change)
     (local-set-key "P" 'jpop-change-and-find-file)))
+
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
+;;; packages.el ends here

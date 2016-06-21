@@ -315,4 +315,8 @@ C-u 0 M-x enumerate-rectangle"
     (apply-on-rectangle 'enumerate-line start end fmt)))
 
 (provide 'functions)
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
 ;;; functions.el ends here

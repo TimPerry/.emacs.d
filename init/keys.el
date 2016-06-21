@@ -1,4 +1,12 @@
-; os x
+;; cheatsheets.el --- my custom cheatsheets
+
+;;; Commentary:
+
+;; my custom setup available at `https://github.com/TimPerry/.emacs.d`
+
+;;; code:
+
+os x
 (setq mac-function-modifier 'hyper)
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
@@ -67,3 +75,8 @@
 ;; dired
 (define-key global-map (kbd "<f8>") 'find-name-dired)
 
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
+;;; keys.el ends here

@@ -1,3 +1,11 @@
+;; cheatsheets.el --- my custom cheatsheets
+
+;;; Commentary:
+
+;; my custom setup available at `https://github.com/TimPerry/.emacs.d`
+
+;;; code:
+
 (use-package cheatsheet
   :bind ("<f12>" . toggle-cheatsheet))
 
@@ -77,4 +85,10 @@
 		:key "<CTRL + x> p f e"
                 :description "Find a file in a library")
 
+(provide 'cheatsheets)
 
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
+;;; cheatsheets.el ends here

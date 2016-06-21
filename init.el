@@ -475,4 +475,9 @@
 (benchmark-init/show-durations-tree)
 
 (provide 'init)
+
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
 ;;; init.el ends here

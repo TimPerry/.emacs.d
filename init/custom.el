@@ -1,3 +1,11 @@
+;; custom.el --- my custom setup
+
+;;; Commentary:
+
+;; my custom setup available at `https://github.com/TimPerry/.emacs.d`
+
+;;; code:
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,3 +60,11 @@
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#4C5725"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "#1F2127"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "#FFFFFF")))))
+
+(provide 'custom)
+
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; eval: (add-hook 'after-save-hook '(lambda () (byte-compile-file (buffer-file-name))) nil t)
+;; End:
+;;; custom.el ends here
