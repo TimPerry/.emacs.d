@@ -2,6 +2,7 @@
 !.gitignore
 !init.el
 !init/
+init/*.elc
 !packages/
 !themes/
 !README.md
