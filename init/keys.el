@@ -6,7 +6,7 @@
 
 ;;; code:
 
-os x
+; os x
 (setq mac-function-modifier 'hyper)
 (setq mac-command-modifier 'super)
 (setq mac-option-modifier 'meta)
