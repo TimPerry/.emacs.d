@@ -317,9 +317,9 @@
   :config (global-git-gutter-mode))
 
 ;;indent-guide
-(use-package indent-guide
-  :diminish indent-guide-mode
-  :init (indent-guide-global-mode))
+(use-package highlight-indent-guides
+  :diminish highlight-indent-guides-mode
+  :init (highlight-indent-guides-mode))
 
 ;; better redo/undo
 (use-package undo-tree
