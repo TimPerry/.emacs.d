@@ -112,6 +112,9 @@
   :bind ("C-x C-f" . counsel-find-file)
   ("s-g" . counsel-git-grep))
 
+(use-package counsel-projectile
+  :bind ("<backtab>" . counsel-projectile))
+
 (use-package smex
   :config (smex-initialize)
   :bind ("M-x" . smex)
@@ -264,7 +267,9 @@
 
 ;; neo-tree
 (use-package neotree
-  :config (setq neo-smart-open t)
+  :config
+  (setq neo-smart-open t)
+  (setq projectile-switch-project-action 'neotree-projectile-action)
   :bind ("<f1>" . neotree-toggle))
 
 ;; ibuffer
