@@ -208,7 +208,8 @@
 		     ("C-c ." . js2-jump-to-definition)
 		     ("C-k" . js2r-kill))
     (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?- "w")))
-    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?_ "w"))))
+    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
+    :bind ("s-." . js2-mode-hide-warnings-and-errors))
 
 (use-package js2-refactor
   :requires js2-mode)
