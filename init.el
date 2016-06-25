@@ -352,6 +352,10 @@
   :diminish smartparens-mode
   :init (smartparens-global-mode))
 
+;; swap quotes
+(use-package toggle-quotes
+  :bind ("s-'" . toggle-quotes))
+
 ;; expand region
 (use-package expand-region
   :bind ("s-e" . er/expand-region))
