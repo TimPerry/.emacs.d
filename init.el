@@ -64,6 +64,9 @@
 ;; evil (vim) mode
 (use-package evil
   :config (setq evil-default-cursor t)
+  (setq evil-insert-state-cursor '(bar "white")
+      evil-emacs-state-cursor '(bar "white")
+      evil-normal-state-cursor '(hbar "#97C150"))
   (bind-keys :map evil-normal-state-map
 	     ("r" . evilmr-replace-in-defun))
   (evil-mode t))
