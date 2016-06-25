@@ -266,7 +266,21 @@
   :init (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
 
 ;; php mode
-(use-package php-mode)
+(use-package php-mode
+  :config (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+  (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode)))
+
+;; ruby mode
+(use-package ruby-mode
+  :config (add-to-list 'auto-mode-alist
+               '("\\.\\(?:cap\\|gemspec\\|irbrc\\|gemrc\\|rake\\|rb\\|ru\\|thor\\)\\'" . ruby-mode))
+  (add-to-list 'auto-mode-alist
+               '("\\(?:Brewfile\\|Capfile\\|Gemfile\\(?:\\.[a-zA-Z0-9._-]+\\)?\\|[rR]akefile\\)\\'" . ruby-mode)))
+
+;; sh mode
+(use-package sh-mode
+  :ensure nil
+  :config (add-to-list 'auto-mode-alist '("\\.sh\\'" . sh-mode)))
 
 ;; neo-tree
 (use-package neotree
