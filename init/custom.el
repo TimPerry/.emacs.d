@@ -40,6 +40,9 @@
  '(powerline-foreground "#FFFFFF")
  '(powerline-height 30)
  '(projectile-completion-system (quote ivy))
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules")))
  '(safe-local-variable-values
    (quote
     ((eval add-hook
@@ -63,6 +66,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(neo-dir-link-face ((t (:foreground "#97C150"))))
+ '(neo-expand-btn-face ((t (:foreground "#97C150"))))
  '(powerline-active1 ((t (:inherit mode-line :background "#3C444C"))))
  '(powerline-active2 ((t (:inherit mode-line :background "#96C348"))))
  '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "#2C3B40"))))

@@ -20,7 +20,9 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :config (projectile-global-mode)
+  :config
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file)
   ("s-O" . projectile-find-file))
 
@@ -286,8 +288,12 @@
 ;; neo-tree
 (use-package neotree
   :config
-  (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (add-hook 'neotree-mode-hook
+            (lambda ()
+              (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
+              (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+              (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
   :bind ("<f1>" . neotree-toggle))
 
 ;; ibuffer
@@ -314,7 +320,13 @@
 
 ;; popwin
 (use-package popwin
-  :config (popwin-mode 1))
+  :config
+  (when neo-persist-show
+    (add-hook 'popwin:before-popup-hook
+              (lambda () (setq neo-persist-show nil)))
+    (add-hook 'popwin:after-popup-hook
+              (lambda () (setq neo-persist-show t))))
+  (popwin-mode 1))
 
 ;; smooth scrolling
 (use-package smooth-scrolling
