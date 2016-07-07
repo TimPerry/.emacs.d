@@ -26,8 +26,10 @@
    (quote
     ("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
  '(jpop-project-directory "~/Projects")
+ '(js2-basic-offset 2)
+ '(neo-smart-open t)
  '(neo-theme (quote nerd))
- '(neo-window-width 40)
+ '(neo-window-width 30)
  '(nyan-animate-nyancat t)
  '(nyan-bar-length 32)
  '(nyan-mode t)
@@ -43,6 +45,7 @@
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".eunit" ".git" ".hg" ".fslckout" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules")))
+ '(projectile-sort-order (quote modification-time))
  '(safe-local-variable-values
    (quote
     ((eval add-hook
@@ -55,6 +58,7 @@
  '(shell-pop-universal-key "s-t")
  '(smex-flex-matching t)
  '(smex-prompt-string "Hold on to your butts: ")
+ '(standard-indent 2)
  '(tempbuf-kill-message "%s")
  '(tempbuf-kill-message-function (quote my-tempbuf-message))
  '(tempbuf-minimum-timeout 300)

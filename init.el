@@ -21,6 +21,7 @@
 (use-package projectile
   :diminish projectile-mode
   :config
+  (setq projectile-indexing-method 'alien)
   (setq projectile-switch-project-action 'neotree-projectile-action)
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file)
@@ -509,6 +510,9 @@
 ;; load after everything else to make they get priority
 (load "~/.emacs.d/init/custom")
 (load "~/.emacs.d/init/keys")
+
+;; go full screen
+(toggle-frame-fullscreen)
 
 ;; show benchmark
 (benchmark-init/show-durations-tree)
