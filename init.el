@@ -17,6 +17,12 @@
 (use-package rainbow-delimiters
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
+;; multi projects
+(use-package perspective
+  :init (persp-mode))
+(use-package persp-projectile
+  :config (bind-keys :map projectile-mode-map ("<M-SPC>" . projectile-persp-switch-project)))
+
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
