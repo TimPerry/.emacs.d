@@ -21,7 +21,7 @@
 (use-package perspective
   :init (persp-mode))
 (use-package persp-projectile
-  :config (bind-keys :map projectile-mode-map ("<M-SPC>" . projectile-persp-switch-project)))
+  :config (bind-keys :map projectile-mode-map ("<backtab>" . projectile-persp-switch-project)))
 
 ;; projectile
 (use-package projectile
@@ -123,9 +123,6 @@
   :requires ivy
   :bind ("C-x C-f" . counsel-find-file)
   ("s-g" . counsel-git-grep))
-
-(use-package counsel-projectile
-  :bind ("<backtab>" . counsel-projectile))
 
 (use-package smex
   :config (smex-initialize)
