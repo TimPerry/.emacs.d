@@ -22,7 +22,7 @@
 (global-set-key (kbd "s-}") 'next-buffer)
 (global-set-key (kbd "s-w") '(lambda () (interactive) (delete-window)))
 (global-set-key (kbd "s-W") '(lambda () (interactive) (delete-frame)))
-(global-set-key (kbd "s-N") '(lambda () (interactive) (make-frame)))
+(global-set-key (kbd "s-T") '(lambda () (interactive) (make-frame)))
 (global-set-key (kbd "s-t") '(lambda () (interactive) (split-window-right)))
 (global-set-key (kbd "s-u") 'revert-buffer)
 (global-set-key (kbd "s-s") 'save-buffer)
