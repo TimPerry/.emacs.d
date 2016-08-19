@@ -18,10 +18,26 @@
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
+(defun kill-current-persp ()
+  "Kill the current persp."
+  (interactive)
+  (persp-kill (persp-name persp-curr)))
+
 (defun colorize-compilation-buffer ()
   (toggle-read-only)
   (ansi-color-apply-on-region (point-min) (point-max))
   (toggle-read-only))
+
+(defun neotree-project-dir ()
+    "Open NeoTree using the git root."
+    (interactive)
+    (let ((project-dir (magit-toplevel))
+          (file-name (buffer-file-name)))
+      (if project-dir
+          (progn
+            (neotree-dir project-dir)
+            (neotree-find file-name))
+        (message "Could not find git project root."))))
 
 (defun jump-to-class ()
   "Find and go to the class at point"

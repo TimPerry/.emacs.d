@@ -18,35 +18,25 @@
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; multi projects
-(use-package perspective
-  :init (persp-mode))
+(use-package perspective)
 (use-package persp-projectile
+  :requires perspective
   :config (bind-keys :map projectile-mode-map ("<backtab>" . projectile-persp-switch-project)))
 
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
+  :init (persp-mode)
   :config
   (setq projectile-indexing-method 'alien)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file)
   ("s-O" . projectile-find-file))
-
-;; request (hud dependency)
-(use-package request)
-
-;; hud
-(use-package hud
-  :requires request
-  :ensure nil
-  :load-path "packages/hud")
 
 ;; jpop
 (use-package jpop
   :diminish jpop-mode
   :ensure f
-  :load-path "packages/jpop"
   :config
   (jpop-global-mode)
   (add-hook 'jpop-toggle-test-fallback-hook 'jpop-find-test)
@@ -198,6 +188,9 @@
   (add-hook 'web-mode-hook
             (lambda () (when (equal web-mode-content-type "jsx") (tern-mode)))))
 
+(use-package vue-mode
+  :config   (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode)))
+
 (use-package js2-mode
   :config
   (setq js2-indent-switch-body t)
@@ -298,7 +291,7 @@
               (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-enter)
               (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
               (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
-  :bind ("<f1>" . neotree-toggle))
+  :bind ("<f1>" . neotree-project-dir))
 
 ;; ibuffer
 (use-package ibuffer
