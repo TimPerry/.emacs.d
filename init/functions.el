@@ -21,7 +21,9 @@
 (defun kill-current-persp ()
   "Kill the current persp."
   (interactive)
-  (persp-kill (persp-name persp-curr)))
+  (if (> (length (persp-names)) 1)
+      (persp-kill (persp-name persp-curr))
+    (message "You can't close the only persp left")))
 
 (defun colorize-compilation-buffer ()
   (toggle-read-only)
