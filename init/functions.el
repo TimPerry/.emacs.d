@@ -332,6 +332,14 @@ C-u 0 M-x enumerate-rectangle"
                            ".1d"))
     (apply-on-rectangle 'enumerate-line start end fmt)))
 
+(defun js-tab2 ()
+  (interactive)
+  (setq js2-basic-offset 2))
+
+(defun js-tab4 ()
+  (interactive)
+  (setq js2-basic-offset 4))
+
 (provide 'functions)
 ;; Local Variables:
 ;; indent-tabs-mode: nil
