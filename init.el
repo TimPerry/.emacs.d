@@ -18,7 +18,8 @@
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;; multi projects
-(use-package perspective)
+(use-package perspective
+  :config (add-hook 'persp-switch-hook 'neotree-project-dir))
 (use-package persp-projectile
   :requires perspective
   :config (bind-keys :map projectile-mode-map ("<backtab>" . projectile-persp-switch-project)))
