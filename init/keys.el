@@ -14,7 +14,6 @@
 
 ; app
 (global-set-key (kbd "s-q") 'save-buffers-kill-terminal)
-(global-set-key (kbd "<f6>") (lambda() (interactive)(load-file "~/.emacs.d/init.el")))
 (global-set-key (kbd "<escape>") 'keyboard-quit)
 
 ; buffers
@@ -26,7 +25,6 @@
 (global-set-key (kbd "s-t") '(lambda () (interactive) (split-window-right)))
 (global-set-key (kbd "s-u") 'revert-buffer)
 (global-set-key (kbd "s-s") 'save-buffer)
-(global-set-key (kbd "<f9>") 'kill-all-buffers)
 
 ; nav
 (global-set-key (kbd "H-<up>") 'beginning-of-buffer)
@@ -73,9 +71,6 @@
 
 ;; toggle
 (global-set-key (kbd "s-U") 'xah-toggle-letter-case)
-
-;; dired
-(define-key global-map (kbd "<f8>") 'find-name-dired)
 
 ;; Local Variables:
 ;; indent-tabs-mode: nil
