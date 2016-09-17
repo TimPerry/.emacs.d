@@ -142,6 +142,7 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
   (setq web-mode-code-indent-offset 2)
@@ -151,31 +152,7 @@
 (use-package vue-mode
   :config   (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode)))
 
-(use-package js2-mode
-  :config
-  (setq js2-indent-switch-body t)
-  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-mode))
-  :config (bind-keys :map js2-mode-map
-		     ("C-c C-o" . js2r-order-vars-by-length)
-		     ("C-c C-s" . js2r-toggle-var-declaration)
-		     ("C-c C-v" . js2r-extract-var)
-		     ("C-c C-i" . js2r-inline-var)
-		     ("C-c C-f" . js2r-extract-function)
-		     ("C-c C-r" . js2r-rename-var)
-		     ("C-c C-l" . js2r-log-this)
-		     ("C-c ." . js2-jump-to-definition)
-		     ("C-k" . js2r-kill))
-    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?- "w")))
-    (add-hook 'js2-mode-hook '(lambda () (modify-syntax-entry ?_ "w")))
-    :bind ("s-." . js2-mode-hide-warnings-and-errors))
-
-(use-package js2-refactor
-  :requires js2-mode)
-
 (use-package web-beautify)
-
-(use-package json-mode)
 
 (use-package yaml-mode
   :config
