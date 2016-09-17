@@ -52,6 +52,7 @@
 (use-package evil-easymotion
   :init (evilem-default-keybindings "SPC"))
 
+;; defaults to current line, in normal mode do `s <char>` to search forward on the line
 (use-package evil-snipe
   :requires evil
   :diminish evil-snipe-local-mode
@@ -101,9 +102,6 @@
 (use-package auto-complete
   :diminish auto-complete-mode
   :config (ac-config-default))
-(use-package ac-js2
-  :requires auto-complete
-  :config (add-hook 'js2-mode-hook 'ac-js2-mode))
 
 ;; whitespace cleanup
 (use-package whitespace-cleanup-mode
@@ -248,10 +246,6 @@
   :config
   (popwin-mode 1))
 
-;; smooth scrolling
-(use-package smooth-scrolling
-  :init (smooth-scrolling-mode))
-
 ;; magit
 (use-package magit
   :config (bind-keys :map magit-mode-map
@@ -270,11 +264,6 @@
   :diminish git-gutter-mode
   :config (global-git-gutter-mode))
 
-;;indent-guide
-(use-package highlight-indent-guides
-  :diminish highlight-indent-guides-mode
-  :init (highlight-indent-guides-mode))
-
 ;; better redo/undo
 (use-package undo-tree
   :diminish undo-tree-mode
@@ -285,12 +274,6 @@
   ("s-Z" . redo))
 (use-package undohist
   :config (undohist-initialize))
-
-;; jump to thing
-(use-package dumb-jump
-  :init (dumb-jump-mode)
-  :bind ("s-b" . dumb-jump-go)
-  ("S-b" . dumb-jump-back))
 
 ;; multi line edit
 (use-package multiple-cursors
@@ -313,19 +296,6 @@
 ;; expand region
 (use-package expand-region
   :bind ("s-e" . er/expand-region))
-
-;; jump mode
-(use-package ace-jump-mode
-  :bind ("s-j" . ace-jump-mode)
-  :bind ("s-i" . ace-jump-line-mode))
-
-;; jump mode zap
-(use-package ace-jump-zap
-  :bind ("s-p" . ace-jump-zap-to-char))
-
-;; visual-regexp
-(use-package visual-regexp
-  :bind ("s-r" . vr/replace))
 
 ;; restart emacs
 (use-package restart-emacs)
