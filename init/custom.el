@@ -64,13 +64,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(neo-dir-link-face ((t (:foreground "#97C150"))))
- '(neo-expand-btn-face ((t (:foreground "#97C150"))))
- '(powerline-active1 ((t (:inherit mode-line :background "#3C444C"))))
- '(powerline-active2 ((t (:inherit mode-line :background "#96C348"))))
+ '(neo-dir-link-face ((t (:foreground "#1BB0AC"))))
+ '(neo-expand-btn-face ((t (:foreground "#1BB0AC"))))
+ '(powerline-active1 ((t (:inherit mode-line :background "#3C444C" :foreground "#ebebeb"))))
+ '(powerline-active2 ((t (:inherit mode-line :background "#1BB0AC"))))
  '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "#2C3B40" : :foreground "#ebebeb"))))
  '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "#ebebeb" :foreground "#252525"))))
- '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#4C5725" :foreground "#ebebeb"))))
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#1BB0AC" :foreground "#ebebeb"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "#1F2127"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "#FFFFFF")))))
 
