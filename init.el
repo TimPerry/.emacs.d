@@ -19,7 +19,6 @@
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
-  :init (persp-mode)
   :config
   (setq projectile-indexing-method 'alien)
   (projectile-global-mode)
