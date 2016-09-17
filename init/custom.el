@@ -27,7 +27,7 @@
    (quote
     ("~$" "\\.o$" "\\.exe$" "\\.a$" "/\\.svn" "\\.elc$" "\\.output$" "\\.$" "#$" "\\.class$" "\\.png$" "\\.svn*" "\\/node_modules\\/*" "\\.gif$" "\\.gem$" "\\.pdf$" "\\.swp$" "\\.iml$" "\\.jar$" "\\/build\\/" "/\\.git" "\\/jsdoc\\/" "\\.min\\.js$" "\\.tags$" "\\.filecache" "\\.cache$" "\\/.git\\/" "\\/report\\/" "\\.gcov\\.html$" "\\.func.*\\.html$" "\\/tmp\\/")))
  '(jpop-project-directory "~/Projects")
- '(js2-basic-offset 2)
+ '(js-indent-level 2)
  '(neo-after-create-hook nil)
  '(neo-banner-message nil)
  '(neo-cwd-line-style (quote text))
@@ -41,6 +41,9 @@
  '(nyan-bar-length 32)
  '(nyan-mode t)
  '(nyan-wavy-trail nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode wn-mode whitespace-cleanup-mode web-mode web-beautify vue-mode visual-regexp vagrant-tramp vagrant use-package undohist toggle-quotes sublimity spray smooth-scrolling smex smartparens smart-newline shell-pop scss-mode restart-emacs request rake rainbow-mode rainbow-delimiters project-explorer powerline-evil popwin php-mode persp-projectile pacmacs nyan-mode neotree markdown-mode magit jsx-mode json-mode js2-refactor indent-guide ibuffer-vc hydra highlight-indent-guides grunt golden-ratio git-timemachine git-gutter-fringe flycheck-pos-tip expand-region exec-path-from-shell evil-snipe evil-matchit evil-mark-replace evil-easymotion emmet-mode duplicate-thing dumb-jump drag-stuff docker deft counsel-projectile counsel-dash context-coloring cheatsheet benchmark-init auto-complete ansible ace-jump-zap ac-js2 0blayout)))
  '(popwin:popup-window-height 25)
  '(powerline-color-alist (quote ((powerline-color1 1) (powerline-color2 1))) t)
  '(powerline-color0 "#3C444C")
