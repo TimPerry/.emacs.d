@@ -16,13 +16,6 @@
 (use-package rainbow-delimiters
   :config (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-;; multi projects
-(use-package perspective
-  :config (add-hook 'persp-switch-hook 'neotree-project-dir))
-(use-package persp-projectile
-  :requires perspective
-  :config (bind-keys :map projectile-mode-map ("<backtab>" . projectile-persp-switch-project)))
-
 ;; projectile
 (use-package projectile
   :diminish projectile-mode
@@ -32,22 +25,6 @@
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file)
   ("s-O" . projectile-find-file))
-
-;; jpop
-(use-package jpop
-  :diminish jpop-mode
-  :ensure f
-  :config
-  (jpop-global-mode)
-  (add-hook 'jpop-toggle-test-fallback-hook 'jpop-find-test)
-  :bind
-  ([C-tab] . jpop-find-file)
-  ("C-S-<tab>" . jpop-git-find-file)
-  ("s-o" . jpop-git-find-file)
-  ("C-x p f c" . jpop-change-and-find-file)
-  ("<f8>" . jpop-change)
-  ("C-x C-b" . jpop-switch-buffer)
-  ("C-x C-p" . jpop-switch-and-find-file))
 
 ;; appearance
 (global-linum-mode 1)
@@ -334,8 +311,7 @@
   :config (bind-keys :map magit-mode-map
                      ("o" . magit-open-file-other-window)
                      ("C-c c" . magit-whitespace-cleanup)
-                     ("C-c e" . magit-vc-ediff)
-                     ("C-<tab>" . jpop-find-file)))
+                     ("C-c e" . magit-vc-ediff)))
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
