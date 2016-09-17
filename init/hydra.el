@@ -13,7 +13,6 @@
             ("o" kill-other-buffers "kill others")
             ("n" next-buffer "next buffer")
             ("p" previous-buffer "previous buffer")
-            ("w" kill-current-persp "kill current persp workspace")
             ("q" nil "quit")))
 
 ;; Local Variables:
