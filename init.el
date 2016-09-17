@@ -23,6 +23,7 @@
   (setq projectile-indexing-method 'alien)
   (projectile-global-mode)
   :bind ("M-<tab>" . projectile-find-file)
+  ("<backtab>" . projectile-switch-project)
   ("s-O" . projectile-find-file))
 
 ;; appearance
@@ -138,27 +139,13 @@
 
 ;; web-mode
 (use-package web-mode
-  :mode
-  ("\\.html$" . web-mode)
-  ("\\.spv$" . web-mode)
-  ("\\.erb$" . web-mode)
-  ("\\.mustache$" . web-mode)
-  ("\\.hbs$" . web-mode)
-  ("\\.partial$" . web-mode)
-  ("\\.jsx$" . web-mode)
-
   :config
+  (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-attr-indent-offset 2)
-  (setq web-mode-markup-indent-offset 2)
-
-  (defadvice web-mode-highlight-part (around tweak-jsx activate)
-    (if (equal web-mode-content-type "jsx")
-        (let ((web-mode-enable-part-face nil)) ad-do-it)
-      ad-do-it))
-
-  (add-hook 'web-mode-hook
-            (lambda () (when (equal web-mode-content-type "jsx") (tern-mode)))))
+  (setq web-mode-markup-indent-offset 2))
 
 (use-package vue-mode
   :config   (add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode)))
@@ -236,11 +223,6 @@
 ;; ansible mode
 (use-package ansible
   :init (add-hook 'yaml-mode-hook '(lambda () (ansible 1))))
-
-;; php mode
-(use-package php-mode
-  :config (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-  (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode)))
 
 ;; ruby mode
 (use-package ruby-mode
