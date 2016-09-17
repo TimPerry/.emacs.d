@@ -332,13 +332,17 @@ C-u 0 M-x enumerate-rectangle"
                            ".1d"))
     (apply-on-rectangle 'enumerate-line start end fmt)))
 
-(defun js-tab2 ()
+(defun wm-tab2 ()
   (interactive)
-  (setq js2-basic-offset 2))
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2))
 
-(defun js-tab4 ()
+(defun wm-tab4 ()
   (interactive)
-  (setq js2-basic-offset 4))
+  (setq web-mode-code-indent-offset 4)
+  (setq web-mode-attr-indent-offset 4)
+  (setq web-mode-markup-indent-offset 4))
 
 (provide 'functions)
 ;; Local Variables:
