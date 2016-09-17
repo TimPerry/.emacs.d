@@ -70,7 +70,7 @@
  '(powerline-active2 ((t (:inherit mode-line :background "#1BB0AC"))))
  '(powerline-evil-emacs-face ((t (:inherit powerline-evil-base-face :background "#2C3B40" : :foreground "#ebebeb"))))
  '(powerline-evil-insert-face ((t (:inherit powerline-evil-base-face :background "#ebebeb" :foreground "#252525"))))
- '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#1BB0AC" :foreground "#ebebeb"))))
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "#373B41" :foreground "#ebebeb"))))
  '(powerline-inactive1 ((t (:inherit mode-line-inactive :background "#1F2127"))))
  '(powerline-inactive2 ((t (:inherit mode-line-inactive :background "#FFFFFF")))))
 
