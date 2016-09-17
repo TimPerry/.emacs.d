@@ -246,11 +246,6 @@
 ;; popwin
 (use-package popwin
   :config
-  (when neo-persist-show
-    (add-hook 'popwin:before-popup-hook
-              (lambda () (setq neo-persist-show nil)))
-    (add-hook 'popwin:after-popup-hook
-              (lambda () (setq neo-persist-show t))))
   (popwin-mode 1))
 
 ;; smooth scrolling
@@ -403,9 +398,6 @@
 
 ;; go full screen
 (toggle-frame-fullscreen)
-
-;; show benchmark
-(benchmark-init/show-durations-tree)
 
 (provide 'init)
 
