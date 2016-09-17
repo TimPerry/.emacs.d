@@ -141,6 +141,7 @@
 (use-package web-mode
   :config
   (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
 
   (setq web-mode-code-indent-offset 2)
@@ -173,10 +174,6 @@
   :requires js2-mode)
 
 (use-package web-beautify)
-
-(use-package jsx-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode)))
 
 (use-package json-mode)
 
