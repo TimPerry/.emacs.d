@@ -28,8 +28,7 @@
 
 ;; appearance
 (global-linum-mode 1)
-(add-to-list 'custom-theme-load-path (concat base-path "/themes"))
-(load-theme 'aurora t)
+(use-package color-theme-sanityinc-tomorrow)
 
 ;; context colouring
 (use-package context-coloring
