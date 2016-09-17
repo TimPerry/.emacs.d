@@ -125,10 +125,6 @@
   :diminish t
   :init (global-evil-matchit-mode 1))
 
-;; nyan mode
-(use-package nyan-mode
-  :init (nyan-mode))
-
 ;; window numbering
 (use-package wn-mode
   :init
