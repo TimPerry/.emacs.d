@@ -376,36 +376,6 @@
 (use-package visual-regexp
   :bind ("s-r" . vr/replace))
 
-;; aggressive-indent
-(use-package aggressive-indent
-  :disabled t
-  :config (global-aggressive-indent-mode 1))
-
-;; terminal
-(use-package shell-pop)
-(use-package shell
-  :config
-  (bind-keys :map shell-mode-map
-	     ("s-k" . clear-terminal)))
-
-;; grunt
-(use-package grunt)
-
-;; rake
-(use-package rake)
-
-;; npm
-(use-package npm
-  :ensure nil
-  :load-path "packages/npm")
-
-;; vagrant
-(use-package vagrant)
-(use-package vagrant-tramp)
-
-;; spray mode
-(use-package spray)
-
 ;; restart emacs
 (use-package restart-emacs)
 
@@ -470,9 +440,6 @@
   :load-path "packages/tempbuf"
   :init
   (add-hook 'after-change-major-mode-hook 'turn-on-tempbuf-mode))
-
-;; games
-(use-package pacmacs)
 
 ;; load after everything else to make they get priority
 (load "~/.emacs.d/init/custom")
