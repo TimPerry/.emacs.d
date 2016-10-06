@@ -187,6 +187,9 @@
   (setq deft-directory "~/Dropbox/notes")
   :bind ("<f7>" . deft))
 
+;; web sequence diagrams
+(use-package wsd-mode)
+
 ;; docker-mode
 (use-package docker
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
@@ -253,6 +256,9 @@
                      ("C-c e" . magit-vc-ediff)))
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
+
+(use-package magithub
+  :after magit)
 
 ;; git timemachine
 (use-package git-timemachine)

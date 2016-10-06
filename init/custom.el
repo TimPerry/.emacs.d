@@ -34,7 +34,7 @@
  '(neo-window-width 40)
  '(package-selected-packages
    (quote
-    (yaml-mode wn-mode whitespace-cleanup-mode web-mode web-beautify vue-mode visual-regexp vagrant-tramp vagrant use-package undohist toggle-quotes sublimity spray smooth-scrolling smex smartparens smart-newline shell-pop scss-mode restart-emacs request rake rainbow-mode rainbow-delimiters project-explorer powerline-evil popwin php-mode persp-projectile pacmacs nyan-mode neotree markdown-mode magit jsx-mode json-mode js2-refactor indent-guide ibuffer-vc hydra highlight-indent-guides grunt golden-ratio git-timemachine git-gutter-fringe flycheck-pos-tip expand-region exec-path-from-shell evil-snipe evil-matchit evil-mark-replace evil-easymotion emmet-mode duplicate-thing dumb-jump drag-stuff docker deft counsel-projectile counsel-dash context-coloring cheatsheet benchmark-init auto-complete ansible ace-jump-zap ac-js2 0blayout)))
+    (wsd-mode scala-mode magithub yaml-mode wn-mode whitespace-cleanup-mode web-mode web-beautify vue-mode visual-regexp vagrant-tramp vagrant use-package undohist toggle-quotes sublimity spray smooth-scrolling smex smartparens smart-newline shell-pop scss-mode restart-emacs request rake rainbow-mode rainbow-delimiters project-explorer powerline-evil popwin php-mode persp-projectile pacmacs nyan-mode neotree markdown-mode magit jsx-mode json-mode js2-refactor indent-guide ibuffer-vc hydra highlight-indent-guides grunt golden-ratio git-timemachine git-gutter-fringe flycheck-pos-tip expand-region exec-path-from-shell evil-snipe evil-matchit evil-mark-replace evil-easymotion emmet-mode duplicate-thing dumb-jump drag-stuff docker deft counsel-projectile counsel-dash context-coloring cheatsheet benchmark-init auto-complete ansible ace-jump-zap ac-js2 0blayout)))
  '(popwin:popup-window-height 25)
  '(powerline-height 30)
  '(projectile-completion-system (quote ivy))
@@ -58,7 +58,8 @@
  '(tempbuf-kill-message-function (quote my-tempbuf-message))
  '(tempbuf-minimum-timeout 300)
  '(undohist-ignored-files (quote ("COMMIT_EDITMSG")))
- '(window-numbering-auto-assign-0-to-minibuffer t))
+ '(window-numbering-auto-assign-0-to-minibuffer t)
+ '(wsd-style "roundgreen"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
