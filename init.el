@@ -20,14 +20,15 @@
 (use-package projectile
   :diminish projectile-mode
   :config
-  (setq projectile-indexing-method 'alien)
-  (projectile-global-mode)
+  (projectile-mode)
   :bind ("M-<tab>" . projectile-find-file)
   ("<backtab>" . projectile-switch-project)
   ("s-O" . projectile-find-file))
 
 ;; appearance
-(global-linum-mode 1)
+(add-hook 'after-change-major-mode-hook
+            '(lambda ()
+               (linum-mode (if (or (equal major-mode 'text-mode) (equal major-mode 'term-mode) (equal major-mode 'help-mode) (equal major-mode 'pdf-view-mode)) 0 1))))
 (use-package color-theme-sanityinc-tomorrow)
 
 ;; context colouring
@@ -257,9 +258,6 @@
 
 (add-hook 'magit-mode-hook 'image-minor-mode)
 
-(use-package magithub
-  :after magit)
-
 ;; git timemachine
 (use-package git-timemachine)
 
@@ -301,6 +299,9 @@
 ;; expand region
 (use-package expand-region
   :bind ("s-e" . er/expand-region))
+
+;; pdf files
+(use-package pdf-tools)
 
 ;; restart emacs
 (use-package restart-emacs)
