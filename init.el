@@ -28,8 +28,10 @@
 ;; appearance
 (add-hook 'after-change-major-mode-hook
             '(lambda ()
-               (linum-mode (if (or (equal major-mode 'text-mode) (equal major-mode 'term-mode) (equal major-mode 'help-mode) (equal major-mode 'pdf-view-mode)) 0 1))))
-(use-package color-theme-sanityinc-tomorrow)
+               (linum-mode (if (or (equal major-mode 'text-mode) (equal major-mode 'term-mode) (equal major-mode 'help-mode) (equal major-mode 'pdf-view-mode) (equal major-mode 'image-mode)) 0 1))))
+(use-package color-theme-sanityinc-tomorrow)             
+(set-frame-parameter (selected-frame) 'alpha '(75 75))
+(add-to-list 'default-frame-alist '(alpha 75 75))
 
 ;; context colouring
 (use-package context-coloring
