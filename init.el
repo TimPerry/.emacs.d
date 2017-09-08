@@ -137,6 +137,9 @@
   :config (add-hook 'sgml-mode-hook 'emmet-mode)
   (add-hook 'css-mode-hook  'emmet-mode))
 
+;; elm
+(use-package elm-mode)
+
 ;; web-mode
 (use-package web-mode
   :config
@@ -164,6 +167,13 @@
   :config (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode)))
+
+;; nginx mode
+(use-package nginx-mode)
+
+;; grovy mode
+(use-package groovy-mode
+  :config (add-to-list 'auto-mode-alist '("Jenkinsfile\\'" . groovy-mode)))
 
 ;; scss-mode
 (use-package scss-mode

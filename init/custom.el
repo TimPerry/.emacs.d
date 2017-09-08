@@ -15,8 +15,9 @@
  '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(custom-safe-themes
    (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
+    ("a3f85ee6e877f02e239d2a6633a5b8263b53113751aca549aa4c5f458829c95d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
  '(desktop-save (quote ask))
+ '(elm-format-on-save t)
  '(evil-default-state (quote normal))
  '(evil-toggle-key "§")
  '(git-gutter:update-interval 2)
@@ -34,7 +35,7 @@
  '(neo-window-width 40)
  '(package-selected-packages
    (quote
-    (linum-of linum-off pdf-tools wsd-mode scala-mode magithub yaml-mode wn-mode whitespace-cleanup-mode web-mode web-beautify vue-mode visual-regexp vagrant-tramp vagrant use-package undohist toggle-quotes sublimity spray smooth-scrolling smex smartparens smart-newline shell-pop scss-mode restart-emacs request rake rainbow-mode rainbow-delimiters project-explorer powerline-evil popwin php-mode persp-projectile pacmacs nyan-mode neotree markdown-mode magit jsx-mode json-mode js2-refactor indent-guide ibuffer-vc hydra highlight-indent-guides grunt golden-ratio git-timemachine git-gutter-fringe flycheck-pos-tip expand-region exec-path-from-shell evil-snipe evil-matchit evil-mark-replace evil-easymotion emmet-mode duplicate-thing dumb-jump drag-stuff docker deft counsel-projectile counsel-dash context-coloring cheatsheet benchmark-init auto-complete ansible ace-jump-zap ac-js2 0blayout)))
+    (elm-mode nginx-mode groovy-mode creamsody-theme linum-of linum-off pdf-tools wsd-mode scala-mode magithub yaml-mode wn-mode whitespace-cleanup-mode web-mode web-beautify vue-mode visual-regexp vagrant-tramp vagrant use-package undohist toggle-quotes sublimity spray smooth-scrolling smex smartparens smart-newline shell-pop scss-mode restart-emacs request rake rainbow-mode rainbow-delimiters project-explorer powerline-evil popwin php-mode persp-projectile pacmacs nyan-mode neotree markdown-mode magit jsx-mode json-mode js2-refactor indent-guide ibuffer-vc hydra highlight-indent-guides grunt golden-ratio git-timemachine git-gutter-fringe flycheck-pos-tip expand-region exec-path-from-shell evil-snipe evil-matchit evil-mark-replace evil-easymotion emmet-mode duplicate-thing dumb-jump drag-stuff docker deft counsel-projectile counsel-dash context-coloring cheatsheet benchmark-init auto-complete ansible ace-jump-zap ac-js2 0blayout)))
  '(popwin:popup-window-height 25)
  '(powerline-height 30)
  '(projectile-completion-system (quote ivy))
